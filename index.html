@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<script language = "javascript">
+  var username;
+  function but1() {
+  var greeting = "Hello, ";
+  username = prompt("What is your name, friend?");
+  confirm(greeting + username + ". Do you want to play a game?");
+  var result = prompt("How are you feeling?");
+  alert("You are feeling " + result + "? I am glad to hear that!");
+  }
+</script>
+<html>
+  <!-- Andrew J. Spanop
+       September 2, 2012
+       Project 1 - My First Web Page -->
+  <head>
+    <!-- commented out for redundency meta charset = "utf-8"> -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="author"
+          content="Andrew J.Spano" />
+    <title>Hello World, and all the boys and girls!</title>
+    <style>
+      body {
+        background-color:black;
+        font-family:arial;color:lime
+      }
+      a {
+        font-family:algerian;color:red;
+      }
+      .contact-info {font-style: italic;} <!--for listing email -->
+    </style>
+  </head>
+  <body> <!-- Begin with section displaying class name and author name
+              in different styles. -->
+    <h1 style="font-family:impact;color:orange;">
+      Introduction to Programming </h1>
+    <p>  
+      <a href = "http://programmer-plebeian.blogspot.com/"> 
+        Webpage brought to you by Andrew Spano </a></p>
+    <!-- Obligatory James Bond Quote section -->
+    <p>
+      M:        "You don't trust anyone, do you?" <br>
+      Bond:     "No." <br>
+      M:        "Then you've learned your lesson." <br>
+      -- James Bond: Casino Royale
+    </p>
+    <!--Section for list of favorite movies! -->
+    <p> The greatest movies are: </p>
+    <ul>
+      <li>Dark Night</li>
+      <li>Hunger Games</li>
+      <li>Hunchback of Notre Dame</li>
+      <li>The Avengers</li>
+      <li>Aladdin</li>
+      <li>Saw</li>
+      <li>Scary Movie</li>
+    </ul>
+    <p> </p>
+    <!--THIS AREA RESERVED FOR GAME -->
+
+    <h1>Abandon Ship</h1>
+
+
+    <!--THIS AREA RESERVED FOR GAME -->
+
+    <p> The greatest language in the World is Lisp! The greatest text editor--
+      Emacs!
+    </p>
+    <!--Two amusing cartoons about lisp and emacs follow -->
+    <p> <img src = "http://www.ymeme.com/files/images/lisp_cycles.png"
+	     alt = "funny lisp comic" />
+    </p>
+
+    <p> <img src = "http://www.accurev.com/blog/wp-content/uploads/2008/03/real_programmers.png"
+	     alt = "funny lisp comic" />
+    </p>
+    
+    <!-- footer section for things that go on bottom, like mailto. -->
+    <p class="contact-info">
+      <!--      commented out!!!<a href="http://validator.w3.org/check?uri=referer">HTML5</a> -->
+      Please email any questions or concerns to
+      <a href = "mailto:andrew.spano1@marist.edu"> Andrew and Associates&trade;
+      </a>
+    </p>
+    <Input type="button" value="click for a friendly message" 
+           onclick=but1();
+</html>
