@@ -80,6 +80,20 @@ function getLocation() {
 	return "Civilian Kitchen";
     }
 
+    else if (xpos === 3 && ypos === 4) {
+
+	return "Crew Presentation Room"
+    }
+
+    
+	//conditional for game boundaries
+    else if (xpos >= 10 || ypos >= 10 || xpos <= -10 || ypos <= -10) {
+
+	return "boundary of the passenger section."
+	    + "You can not legally continue any futher. turn back.";
+
+    }
+
     //catch all if player has not reached a unique location
 
     else {
