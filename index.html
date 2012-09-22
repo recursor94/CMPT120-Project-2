@@ -15,7 +15,7 @@ function changeText(msg) {
 
     var textArea = document.getElementById("gametext");
     //    alert("function has been called.");
-    alert(textArea).value;
+    //    alert(textArea).value;
 
 }
 
@@ -26,6 +26,7 @@ function but_north() {
     var message = getLocation();
     //test message:state current coords.
     alert(testcoords());
+    changeText(getLocation());
 
 }
 
