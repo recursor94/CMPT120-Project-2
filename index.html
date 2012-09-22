@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <script language = "javascript">
     var username;
+    var xpos=0;
+    var ypos=0;
+    var score=0;
 function but1() {
     var greeting = "Hello, ";
     username = prompt("What is your name, friend?");
@@ -14,6 +17,18 @@ function changeText(msg) {
     //    alert("function has been called.");
     alert(textArea).value;
 
+}
+
+function getLocation() {
+
+    if(xpos === 0 && ypos === 0) {
+
+	return "Luxurious Suite";
+    }
+    else if (xpos === -2 && ypos === -1) {
+
+	return "Civilian Kitchen";
+    }
 }
 
 </script>
