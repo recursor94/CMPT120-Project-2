@@ -80,12 +80,14 @@ function getLocation() {
     }
     else if (xpos === -2 && ypos === -1) {
 
+	testLocation("Civilian Kitchen");
 	return "Civilian Kitchen";
     }
 
     else if (xpos === 3 && ypos === 4) {
-
-	return "Crew Presentation Room"
+	
+	testLocation("Crew Presentation Room");
+	return "Crew Presentation Room";
     }
 
     
@@ -109,9 +111,15 @@ function getLocation() {
 
 function testLocation (location) {
 
-    if(location === "Luxurious Suite" && bool_kitchen === false) {
+    if(location === "Civilian Kitchen" && bool_kitchen === false) {
 
 	score+=5;
+	bool_kitchen = true;
+    }
+
+    else if (bool_presentation === false && location === "Crew Presentation Room") {
+	bool_presentation = true;
+	score += 5;
     }
 }
 
