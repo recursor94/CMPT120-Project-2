@@ -18,7 +18,7 @@ function changeText(msg) {
     var textArea = document.getElementById("gametext");
     //    alert("function has been called.");
     //    alert(textArea).value;
-    textArea.value = "You are now in the " + msg;
+    textArea.value = "You are now in the " + msg + "\nScore: " + score;
     //    alert("You made it here fine.");
 
 }
@@ -120,6 +120,7 @@ function testLocation (location) {
     else if (bool_presentation === false && location === "Crew Presentation Room") {
 	bool_presentation = true;
 	score += 5;
+
     }
 }
 
