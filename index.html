@@ -19,6 +19,20 @@ function changeText(msg) {
 
 }
 
+function but_north() {
+    //test alert
+    alert("but north function entered");
+    xpos+=1;
+    var message = getLocation();
+    //test message:state current coords.
+    alert(testcoords());
+
+}
+
+function testcoords () {
+    return "" + xpos + ", " + ypos;
+}
+
 function getLocation() {
 
     if(xpos === 0 && ypos === 0) {
@@ -89,7 +103,7 @@ function getLocation() {
     </textarea>
 
     <Input type="button" value="North" 
-	   onclick=changeText();>
+	   onclick=but_north();>
 
     <Input type="button" value="South" 
            onclick=but1();>
