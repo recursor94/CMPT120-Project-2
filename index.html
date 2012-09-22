@@ -24,7 +24,40 @@ function changeText(msg) {
 function but_north() {
     //test alert
     alert("but north function entered");
+    ypos+=1;
+    var message = getLocation();
+    //test message:state current coords.
+    alert(testcoords());
+    changeText(getLocation());
+
+}
+
+function but_south() {
+    //test alert
+    alert("but north function entered");
+    ypos+=-1;
+    var message = getLocation();
+    //test message:state current coords.
+    alert(testcoords());
+    changeText(getLocation());
+
+}
+
+function but_east() {
+    //test alert
+    alert("but north function entered");
     xpos+=1;
+    var message = getLocation();
+    //test message:state current coords.
+    alert(testcoords());
+    changeText(getLocation());
+
+}
+
+function but_west() {
+    //test alert
+    alert("but north function entered");
+    xpos-1;
     var message = getLocation();
     //test message:state current coords.
     alert(testcoords());
