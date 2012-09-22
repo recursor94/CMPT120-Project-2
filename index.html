@@ -1,13 +1,21 @@
 <!DOCTYPE HTML>
 <script language = "javascript">
-  var username;
-  function but1() {
-  var greeting = "Hello, ";
-  username = prompt("What is your name, friend?");
-  confirm(greeting + username + ". Do you want to play a game?");
-  var result = prompt("How are you feeling?");
-  alert("You are feeling " + result + "? I am glad to hear that!");
-  }
+    var username;
+function but1() {
+    var greeting = "Hello, ";
+    username = prompt("What is your name, friend?");
+    confirm(greeting + username + ". Do you want to play a game?");
+    var result = prompt("How are you feeling?");
+    alert("You are feeling " + result + "? I am glad to hear that!");
+}
+function changeText(msg) {
+
+    var textArea = document.getElementById("gametext");
+    //    alert("function has been called.");
+    alert(textArea).value;
+
+}
+
 </script>
 <html>
   <!-- Andrew J. Spanop
@@ -60,13 +68,13 @@
 
     <h1>Abandon Ship</h1>
 
-    <textarea name="Game Text" rows = 15 cols = 40>
+    <textarea id="gametext" rows = 15 cols = 40>
     You are an intergalactic space ambassador on a large freighter spaceship.
     You are currently in your luxurious suite on the passenger deck.
     </textarea>
 
     <Input type="button" value="North" 
-	   onclick=but1();>
+	   onclick=changeText();>
 
     <Input type="button" value="South" 
            onclick=but1();>
