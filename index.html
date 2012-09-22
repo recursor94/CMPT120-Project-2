@@ -6,6 +6,8 @@
     var score=0;
     var bool_kitchen = false;
     var bool_presentation = false;
+    var bool_corridor = false;
+
 function but1() {
     var greeting = "Hello, ";
     username = prompt("What is your name, friend?");
@@ -103,7 +105,8 @@ function getLocation() {
 
     else {
 
-	return "VIP residential sector corridor.";
+	testLocation("VIP Residential Sector Corridor");
+	return "VIP Residential Sector Corridor";
 
     }
     
@@ -121,6 +124,14 @@ function testLocation (location) {
 	bool_presentation = true;
 	score += 5;
 
+    }
+
+    else if (bool_corridor === false && location === "VIP Residential Sector Corridor") {
+
+
+	score += 5;
+	bool_corridor = true;
+	
     }
 }
 
