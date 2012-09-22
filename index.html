@@ -16,14 +16,14 @@ function changeText(msg) {
     var textArea = document.getElementById("gametext");
     //    alert("function has been called.");
     //    alert(textArea).value;
-    textArea.value = msg;
-    alert("You made it here fine.");
+    textArea.value = "You are now in the " + msg;
+    //    alert("You made it here fine.");
 
 }
 
 function but_north() {
     //test alert
-    alert("but north function entered");
+    //    alert("but north function entered");
     ypos+=1;
     var message = getLocation();
     //test message:state current coords.
@@ -34,7 +34,7 @@ function but_north() {
 
 function but_south() {
     //test alert
-    alert("but south function entered");
+    //alert("but south function entered");
     ypos+=-1;
     var message = getLocation();
     //test message:state current coords.
@@ -45,7 +45,7 @@ function but_south() {
 
 function but_east() {
     //test alert
-    alert("but east function entered");
+    // alert("but east function entered");
     xpos+=1;
     var message = getLocation();
     //test message:state current coords.
@@ -56,7 +56,7 @@ function but_east() {
 
 function but_west() {
     //test alert
-    alert("but west function entered");
+    //alert("but west function entered");
     xpos-=1;
     var message = getLocation();
     //test message:state current coords.
