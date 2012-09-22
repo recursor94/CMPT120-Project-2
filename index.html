@@ -4,6 +4,8 @@
     var xpos=0;
     var ypos=0;
     var score=0;
+    var bool_kitchen = false;
+    var bool_presentation = false;
 function but1() {
     var greeting = "Hello, ";
     username = prompt("What is your name, friend?");
@@ -72,7 +74,8 @@ function testcoords () {
 function getLocation() {
 
     if(xpos === 0 && ypos === 0) {
-
+	
+	testLocation("Luxiurious suite");
 	return "Luxurious Suite";
     }
     else if (xpos === -2 && ypos === -1) {
@@ -101,8 +104,18 @@ function getLocation() {
 	return "VIP residential sector corridor.";
 
     }
+    
 }
 
+function testLocation (location) {
+
+    if(location === "Luxurious Suite" && bool_kitchen === false) {
+
+	score+=5;
+    }
+}
+
+  
 </script>
 <html>
   <!-- Andrew J. Spanop
