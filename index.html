@@ -20,7 +20,8 @@ function changeText(msg) {
     var textArea = document.getElementById("gametext");
     //    alert("function has been called.");
     //    alert(textArea).value;
-    textArea.value = "You are now in the " + msg + "\nScore: " + score;
+    textArea.value = "You are now in the " + msg + "\nScore: " + score
+	+ " current coordinates: " + testcoords();
     //    alert("You made it here fine.");
 
 }
@@ -31,7 +32,7 @@ function but_north() {
     ypos+=1;
     var message = getLocation();
     //test message:state current coords.
-    alert(testcoords());
+    //alert(testcoords());
     changeText(getLocation());
 
 }
@@ -42,7 +43,7 @@ function but_south() {
     ypos+=-1;
     var message = getLocation();
     //test message:state current coords.
-    alert(testcoords());
+    //alert(testcoords());
     changeText(getLocation());
 
 }
@@ -53,7 +54,7 @@ function but_east() {
     xpos+=1;
     var message = getLocation();
     //test message:state current coords.
-    alert(testcoords());
+    //alert(testcoords());
     changeText(getLocation());
 
 }
@@ -64,13 +65,13 @@ function but_west() {
     xpos-=1;
     var message = getLocation();
     //test message:state current coords.
-    alert(testcoords());
+    //alert(testcoords());
     changeText(getLocation());
 
 }
 
 function testcoords () {
-    return "" + xpos + ", " + ypos;
+    return "(" + xpos + ", " + ypos + ")";
 }
 
 function getLocation() {
