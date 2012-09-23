@@ -95,28 +95,28 @@ function getLocation() {
 
     
 	//conditional for game boundaries
-    else if (xpos >= 10 || ypos >= 10 || xpos <= -10 || ypos <= -10) {
+    else if (xpos >= 6 || ypos >= 6 || xpos <= -6 || ypos <= -6) {
 
-	if(xpos > 10) {
+	if(xpos > 6) {
 
 	    but_west();
-	    return;
+	    return "VIP Resdiential Sector Corridor";
 	}
 
-	else if (xpos < -10) {
+	else if (xpos < -6) {
 
 	    but_east();
-	    return;
+	    return "VIP Resdiential Sector Corridor";
 	}
 
-	 if (ypos > 10) {
+	 if (ypos > 6) {
 	    but_south();
-	     return;
+	     return "VIP Resdiential Sector Corridor";
 	}
-	else if (ypos < -10) {
+	else if (ypos < -6) {
 
 	    but_north();
-	    return;
+	    return "VIP Resdiential Sector Corridor";
 	}
 	
 
