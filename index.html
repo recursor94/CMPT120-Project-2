@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
 <script language = "javascript">
     var username;
-    var xpos=0;
-    var ypos=0;
-    var score=0;
+    var xpos = 0;
+    var ypos = 0;
+    var xupbound = 6;
+    var xlowbound = -6;
+    var yupbound = 6;
+    var ylowbound = -6;
+    var score = 0;
     var bool_kitchen = false;
     var bool_presentation = false;
     var bool_corridor = false;
@@ -95,25 +99,34 @@ function getLocation() {
 
     
 	//conditional for game boundaries
-    else if (xpos >= 6 || ypos >= 6 || xpos <= -6 || ypos <= -6) {
+    /* The boundary reached message will always be displayed no matter
+       where the player is in one direction if he is at the boundary in
+       the other direction. I have decided that this is desireable. He 
+       will be pushed back to the hall if tries to push forward. */
+    else if (xpos >= xupbound || ypos >= yupbound || xpos <= xlowbound || ypos <= ylowbound) {
 
-	if(xpos > 6) {
+	/* first test includes positions equal to the boundary,
+	   that will yield bottom location warning to be returned 
+	   these tests are for pushing back the player if he does
+	   in fact exceed the boundary */
+
+	if(xpos > xupbound) {
 
 	    xpos-=1;
 	    return "VIP Residential Sector Corridor";
 	}
 
-	else if (xpos < -6) {
+	else if (xpos < xlowbound) {
 
 	    xpos+=1;
 	    return "VIP Residential Sector Corridor";
 	}
 
-	 if (ypos > 6) {
+	 if (ypos > yupbound) {
 	     ypos-=1;
 	     return "VIP Residential Sector Corridor";
 	}
-	else if (ypos < -6) {
+	else if (ypos < ylowbound) {
 
 	    ypos+=1;
 	    return "VIP Residential Sector Corridor";
