@@ -99,23 +99,23 @@ function getLocation() {
 
 	if(xpos > 6) {
 
-	    but_west();
+	    xpos-=1;
 	    return "VIP Residential Sector Corridor";
 	}
 
 	else if (xpos < -6) {
 
-	    but_east();
+	    xpos+=1;
 	    return "VIP Residential Sector Corridor";
 	}
 
 	 if (ypos > 6) {
-	    but_south();
+	     ypos-=1;
 	     return "VIP Residential Sector Corridor";
 	}
 	else if (ypos < -6) {
 
-	    but_north();
+	    ypos+=1;
 	    return "VIP Residential Sector Corridor";
 	}
 	
