@@ -97,11 +97,34 @@ function getLocation() {
 	//conditional for game boundaries
     else if (xpos >= 10 || ypos >= 10 || xpos <= -10 || ypos <= -10) {
 
+	if(xpos > 10) {
+
+	    but_west();
+	    return;
+	}
+
+	else if (xpos < -10) {
+
+	    but_east();
+	    return;
+	}
+
+	 if (ypos > 10) {
+	    but_south();
+	     return;
+	}
+	else if (ypos < -10) {
+
+	    but_north();
+	    return;
+	}
+	
+
 	return "boundary of the passenger section."
 	    + "You can not legally continue any further. turn back.";
 
     }
-
+    
     //catch all if player has not reached a unique location
 
     else {
