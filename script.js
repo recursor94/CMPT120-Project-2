@@ -16,7 +16,7 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
-
+var textArea;
 var username;
 var xpos = 0;
 var ypos = 0;
@@ -29,6 +29,7 @@ var bool_kitchen = false;
 var bool_presentation = false;
 var bool_corridor = false;
 
+
 function but1() {
     var greeting = "Hello, ";
     username = prompt("What is your name, friend?");
@@ -37,14 +38,14 @@ function but1() {
     alert("You are feeling " + result + "? I am glad to hear that!");
 }
 function changeText(msg) {
-
-    var textArea = document.getElementById("gametext");
+    textArea = document.getElementById("gametext");
     //    alert("function has been called.");
     //    alert(textArea).value;
-    textArea.value = "You are now in the " + msg + "\nScore: " + score
+    textArea.value = textArea.value + "\n" 
+        + "You are now in the " + msg + "\nScore: " + score
 	+ " current coordinates: " + testcoords();
     //    alert("You made it here fine.");
-
+        textArea.scrollTop = textArea.scrollHeight;
 }
 
 function but_north() {
