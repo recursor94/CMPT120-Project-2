@@ -41,6 +41,13 @@ function updateText(msg) {
     textArea = document.getElementById("gametext");
     //    alert("function has been called.");
     //    alert(textArea).value;
+
+    //necessary test for not understood text.
+    if(msg === "I don't understand that") {
+        textArea.value = textArea.value + "\n" + msg;
+        return;
+    }
+    
     textArea.value = textArea.value + "\n\n" 
         + "You are now in the " + msg + "\nScore: " + score
 	+ " current coordinates: " + testcoords();
