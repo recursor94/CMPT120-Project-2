@@ -45,6 +45,7 @@ function updateText(msg) {
     //necessary test for not understood text.
     if(msg === "I don't understand that") {
         textArea.value = textArea.value + "\n" + msg;
+        textArea.scrollTop = textArea.scrollHeight;
         return;
     }
     
