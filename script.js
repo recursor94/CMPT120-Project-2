@@ -192,5 +192,8 @@ function testLocation (location) {
 
 function parseInput() {
     var textfield = document.getElementById("input");
-    alert(textfield);
+    //    alert(textfield);
+    var input = textfield.value;
+    textfield.value = "";
+    alert(input);
 }
