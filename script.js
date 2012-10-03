@@ -41,7 +41,7 @@ function updateText(msg) {
     textArea = document.getElementById("gametext");
     //    alert("function has been called.");
     //    alert(textArea).value;
-    textArea.value = textArea.value + "\n" 
+    textArea.value = textArea.value + "\n\n" 
         + "You are now in the " + msg + "\nScore: " + score
 	+ " current coordinates: " + testcoords();
     //    alert("You made it here fine.");
@@ -196,4 +196,19 @@ function parseInput() {
     var input = textfield.value;
     textfield.value = "";
     //    alert(input);
+    if(input === "N") {
+        but_north();
+    }
+    else if (input === "S") {
+        but_south();
+    }
+    else if (input === "E") {
+        but_east();
+    }
+    else if (input === "W") {
+        but_west();
+    }
+    else {
+        updateText("I don't understand that");
+    }
 }
