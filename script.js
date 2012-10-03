@@ -37,7 +37,7 @@ function but1() {
     var result = prompt("How are you feeling?");
     alert("You are feeling " + result + "? I am glad to hear that!");
 }
-function changeText(msg) {
+function updateText(msg) {
     textArea = document.getElementById("gametext");
     //    alert("function has been called.");
     //    alert(textArea).value;
@@ -55,7 +55,7 @@ function but_north() {
     var message = getLocation();
     //test message:state current coords.
     //alert(testcoords());
-    changeText(message);
+    updateText(message);
 
 }
 
@@ -66,7 +66,7 @@ function but_south() {
     var message = getLocation();
     //test message:state current coords.
     //alert(testcoords());
-    changeText(message);
+    updateText(message);
 
 }
 
@@ -77,7 +77,7 @@ function but_east() {
     var message = getLocation();
     //test message:state current coords.
     //alert(testcoords());
-    changeText(message);
+    updateText(message);
 
 }
 
@@ -88,7 +88,7 @@ function but_west() {
     var message = getLocation();
     //test message:state current coords.
     //alert(testcoords());
-    changeText(message);
+    updateText(message);
 
 }
 
@@ -195,5 +195,5 @@ function parseInput() {
     //    alert(textfield);
     var input = textfield.value;
     textfield.value = "";
-    alert(input);
+    //    alert(input);
 }
