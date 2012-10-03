@@ -189,3 +189,8 @@ function testLocation (location) {
 	
     }
 }
+
+function parseInput() {
+    var textfield = document.getElementById("Enter Command");
+    alert(textfield);
+}
