@@ -191,6 +191,6 @@ function testLocation (location) {
 }
 
 function parseInput() {
-    var textfield = document.getElementById("Enter Command");
+    var textfield = document.getElementById("input");
     alert(textfield);
 }
