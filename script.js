@@ -204,16 +204,16 @@ function parseInput() {
     var input = textfield.value;
     textfield.value = "";
     //    alert(input);
-    if(input === "N") {
+    if(input === "N" || input === "n" || input === "north") {
         but_north();
     }
-    else if (input === "S") {
+    else if (input === "S" || input === "south" || input === "s") {
         but_south();
     }
-    else if (input === "E") {
+    else if (input === "E" || input === "e" || input === "east") {
         but_east();
     }
-    else if (input === "W") {
+    else if (input === "W" || input === "w" || input === "west") {
         but_west();
     }
     else {
