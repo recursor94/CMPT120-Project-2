@@ -28,6 +28,9 @@ var score = 0;
 var bool_kitchen = false;
 var bool_presentation = false;
 var bool_corridor = false;
+var bool_bar = false;
+var bool_closet = false;
+var bool_restroom = false;
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
 		    + "These Commands move the player one unit in that direction\n"
@@ -140,7 +143,7 @@ function getLocation() {
     }
     
     else if (xpos === 0 && ypos === 2) {
-	testLocation("Luxury Space Bar.");
+	testLocation("Public Restroom");
     }
 
     
@@ -154,7 +157,7 @@ function getLocation() {
 	/* first test includes positions equal to the boundary,
 	 that will yield bottom location warning to be returned 
 	 these tests are for pushing back the player if he does
-	 in fact exceed the boundarby */
+	 in fact exceed the boundary */
 
 	if(xpos > xupbound) {
             
