@@ -180,13 +180,18 @@ function getLocation() {
      will be pushed back to the hall if tries to push forward. */
     //boundary is x = 3 so he will not be able to continue forward
     //after that point.
-    else if (xpos >= 2) {
+    else if (xpos >= 3) {
 	testLocation ("Corridor Outer Limits");
 	return "Corridor Outer Limits";
 	
     }
-    else if (xpos <= 0) {
+    else if (xpos <= -1) {
 	testLocation("leftbound");
+	return "VIP Residential Sector Corridor";
+    }
+
+    else {
+	testLocation("VIP Residential Sector Corridor");
 	return "VIP Residential Sector Corridor";
     }
 }
