@@ -226,10 +226,13 @@ function getLocation() {
 
 function testLocation (location) {
 
-    if(location === "Civilian Kitchen" && bool_kitchen === false) {
+    if(location === "Civilian Kitchen") {
 
-	score+=5;
-	bool_kitchen = true;
+	if(bool_kitchen === false) {
+	    score+=5;
+	    bool_kitchen = true;
+	}
+
 	bool_canNorth = false;
 	bool_canEast = false;
 	bool_canWest = false;
@@ -241,11 +244,18 @@ function testLocation (location) {
 
     }
 
-    else if (bool_corridor === false && location === "VIP Residential Sector Corridor") {
+    else if (location === "VIP Residential Sector Corridor") {
 
+	if(bool_corridor === false) {
+	    score += 5;
+	    bool_corridor = true;
+	    
+	}
 
-	score += 5;
-	bool_corridor = true;
+	bool_canNorth = true;
+	bool_canSouth = true;
+	bool_canEast = true;
+	bool_canWest = true;
 	
     }
 }
