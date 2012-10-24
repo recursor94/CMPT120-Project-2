@@ -29,8 +29,8 @@ var bool_kitchen = false;
 var bool_presentation = false;
 var bool_corridor = false;
 //important var which will appear whenever the user inputs an invalid command.
-var validCommands = "\nValid Directions are: (North, South, East and West\n"
-		    + "Which moves the player one unit in that direction\n"
+var validCommands = "\nValid Directions are: (North, South, East and West)\n"
+		    + "These Commands move the player one unit in that direction\n"
 		    + "Ex: North increments y position by one,"
 		    + " West decrements x positon by one."
 		    + "\nShorthand commands n,s,w,e correspond to North, South"
@@ -52,7 +52,7 @@ function updateText(msg) {
 
     //necessary test for not understood text.
     if(msg === "I don't understand that") {
-        textArea.value = textArea.value + "\n" + msg;
+        textArea.value = textArea.value + "\n" + msg + validCommands;
         textArea.scrollTop = textArea.scrollHeight;
         return;
     }
