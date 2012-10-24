@@ -239,9 +239,11 @@ function testLocation (location) {
     }
 
     else if (bool_presentation === false && location === "Crew Presentation Room") {
-	bool_presentation = true;
-	score += 5;
+	if(bool_presentation === false) {
+	    bool_presentation = true;
+	    score += 5;
 
+	}
     }
 
     else if (location === "VIP Residential Sector Corridor") {
@@ -252,12 +254,8 @@ function testLocation (location) {
 	    bool_corridor = true;
 	    
 	}
+	enableAllButtons();
 
-	bool_canNorth = true;
-	bool_canSouth = true;
-	bool_canEast = true;
-	bool_canWest = true;
-	
     }
 }
 
@@ -318,5 +316,16 @@ function disableButton(direction) {
 }
 
 function enableAllButtons() {
-    
+    var but = document.getElementById("n");
+    but.disabled = false;
+    but = document.getElementById("s");
+    but.disabled = false;
+    but = document.getElementById("e");
+    but.disabled = false;
+    but = document.getElementById("w");
+    but.disabled = false;
+    bool_canNorth = true;
+    bool_canSouth = true;
+    bool_canEast = true;
+    bool_canWest = true;
 }
