@@ -76,6 +76,11 @@ function updateText(msg) {
 function but_north() {
     //test alert
     //    alert("but north function entered");
+
+    if (bool_canNorth === false) {
+	updateText ("predicament of not being able to move in this direction");
+	return;
+    }
     ypos+=1;
     var message = getLocation();
     //test message:state current coords.
@@ -87,6 +92,10 @@ function but_north() {
 function but_south() {
     //test alert
     //alert("but south function entered");
+    if (bool_canSouth === false) {
+	updateText("predicament of not being able to move in this direction");
+	return;
+    }
     ypos+=-1;
     var message = getLocation();
     //test message:state current coords.
@@ -98,6 +107,10 @@ function but_south() {
 function but_east() {
     //test alert
     // alert("but east function entered");
+    if (bool_canEast === false) {
+	updateText ("predicament of not being able to move in this direction");
+	return;
+    }
     xpos+=1;
     var message = getLocation();
     //test message:state current coords.
@@ -109,6 +122,10 @@ function but_east() {
 function but_west() {
     //test alert
     //alert("but west function entered");
+    if (bool_canWest === false) {
+	updateText("predicament of not being able to move in this direction");
+	return;
+    }
     xpos-=1;
     var message = getLocation();
     //test message:state current coords.
@@ -213,6 +230,9 @@ function testLocation (location) {
 
 	score+=5;
 	bool_kitchen = true;
+	bool_canNorth = false;
+	bool_canEast = false;
+	bool_canWest = false;
     }
 
     else if (bool_presentation === false && location === "Crew Presentation Room") {
@@ -227,12 +247,6 @@ function testLocation (location) {
 	score += 5;
 	bool_corridor = true;
 	
-    }
-    else if (location === "Luxury Space Bar") {
-	if(bool_bar === false){
-	    score+=5;
-	}
-		
     }
 }
 
