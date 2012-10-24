@@ -36,6 +36,7 @@ var bool_canNorth = true;
 var bool_canSouth = true;
 var bool_canEast = true;
 var bool_canWest = true;
+
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
 		    + "These Commands move the player one unit in that direction\n"
@@ -127,29 +128,29 @@ function getLocation() {
 	//testLocation("Luxurious suite");
 	return "Luxurious Suite";
     }
-    else if (xpos === -2 && ypos === -1) {
+    else if (xpos === 0 && ypos === 2) {
 
 	testLocation("Civilian Kitchen");
 	return "Civilian Kitchen";
     }
     
-    else if (xpos === 3 && ypos === 4) {
+    else if (xpos === 1 && ypos === 2) {
 	
 	testLocation("Crew Presentation Room");
 	return "Crew Presentation Room";
     }
 
-    else if (xpos === 1 && ypos === 3) {
+    else if (xpos === 1 && ypos === 0) {
 	testLocation("Luxury Space Bar");
 	return "Luxury Space Bar";
     }
 
-    else if (xpos === 2 && ypos === 6) {
+    else if (xpos === 2 && ypos === 2) {
 	testLocation("Unlocked Supply Closet");
 	return "Unlocked Supply Closet";
     }
     
-    else if (xpos === 0 && ypos === 2) {
+    else if (xpos === 2 && ypos === 0) {
 	testLocation("Public Restroom");
 	return "Public Restroom";
     }
