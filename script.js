@@ -178,6 +178,17 @@ function getLocation() {
      where the player is in one direction if he is at the boundary in
      the other direction. I have decided that this is desireable. He 
      will be pushed back to the hall if tries to push forward. */
+    //boundary is x = 3 so he will not be able to continue forward
+    //after that point.
+    else if (xpos >= 2) {
+	testLocation ("Corridor Outer Limits");
+	return "Corridor Outer Limits";
+	
+    }
+    else if (xpos <= 0) {
+	testLocation("leftbound");
+	return "VIP Residential Sector Corridor";
+    }
     else if (xpos >= xupbound || ypos >= yupbound || xpos <= xlowbound || ypos <= ylowbound) {
 
 	/* first test includes positions equal to the boundary,
@@ -280,6 +291,17 @@ function testLocation (location) {
 	}
 	disableButton("north");
 	disableButton("east");
+	disableButton("west");
+    }
+
+    else if (location === "Corridor Outer Limits") {
+	//have to enable all buttons first so that when leaving a room it appears properly
+	enableAllButtons();
+	disableButton("east");
+    }
+
+    else if (location === "leftbound") {
+	enableAllButtons();
 	disableButton("west");
     }
     else {
