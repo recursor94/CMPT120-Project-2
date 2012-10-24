@@ -131,6 +131,18 @@ function getLocation() {
 	return "Crew Presentation Room";
     }
 
+    else if (xpos === 1 && ypos === 3) {
+	testLocation("Luxury Space Bar.");
+    }
+
+    else if (xpos === 2 && ypos === 6) {
+	testLocation("Unlocked Supply Closet");
+    }
+    
+    else if (xpos === 0 && ypos === 2) {
+	testLocation("Luxury Space Bar.");
+    }
+
     
     //conditional for game boundaries
     /* The boundary reached message will always be displayed no matter
