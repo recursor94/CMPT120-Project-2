@@ -289,8 +289,11 @@ function parseInput() {
 
 function disableButton(direction) {
     //Disables button associated with string.
+    var but = null;
+
     if (direction === "north") {
 	bool_canNorth = false;
+	but = document.getElementById("n");
     }
     
     if (direction === "south") {
