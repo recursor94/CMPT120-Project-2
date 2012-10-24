@@ -189,50 +189,6 @@ function getLocation() {
 	testLocation("leftbound");
 	return "VIP Residential Sector Corridor";
     }
-    else if (xpos >= xupbound || ypos >= yupbound || xpos <= xlowbound || ypos <= ylowbound) {
-
-	/* first test includes positions equal to the boundary,
-	 that will yield bottom location warning to be returned.
-	 these tests are for pushing back the player if he does
-	 in fact exceed the boundary */
-
-	if(xpos > xupbound) {
-            
-	    xpos-=1;
-	    return "VIP Residential Sector Corridor";
-	}
-
-	else if (xpos < xlowbound) {
-
-	    xpos+=1;
-	    return "VIP Residential Sector Corridor";
-	}
-
-	if (ypos > yupbound) {
-	    ypos-=1;
-	    return "VIP Residential Sector Corridor";
-	}
-	else if (ypos < ylowbound) {
-
-	    ypos+=1;
-	    return "VIP Residential Sector Corridor";
-	}
-	
-
-	return "boundary of the passenger section."
-	    + "You can not legally continue any further. turn back.";
-
-    }
-    
-    //catch all if player has not reached a unique location
-
-    else {
-
-	testLocation("VIP Residential Sector Corridor");
-	return "VIP Residential Sector Corridor";
-
-    }
-    
 }
 
 function testLocation (location) {
