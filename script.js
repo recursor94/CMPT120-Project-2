@@ -33,9 +33,9 @@ var bool_closet = false;
 var bool_restroom = false;
 //vars for testing if you can move or not. Used in direction functions.
 var bool_canNorth = true;
-var bool_canSouth = true;
-var bool_canEast = true;
-var bool_canWest = true;
+var bool_canSouth = false;
+var bool_canEast = false;
+var bool_canWest = false; //we start in a room south of the hall, so all we can move is north initially.
 
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
@@ -142,7 +142,7 @@ function getLocation() {
 
     if(xpos === 0 && ypos === 0) {
 	
-	//testLocation("Luxurious suite");
+	testLocation("Luxurious Suite");
 	return "Luxurious Suite";
     }
     else if (xpos === 0 && ypos === 2) {
@@ -225,8 +225,12 @@ function getLocation() {
 }
 
 function testLocation (location) {
-
-    if(location === "Civilian Kitchen") {
+    if(location === "Luxurious Suite") {
+	disableButton("south");
+	disableButton("east");
+	disableButton("west");
+    }
+    else if(location === "Civilian Kitchen") {
 
 	if(bool_kitchen === false) {
 	    score+=5;
@@ -238,12 +242,14 @@ function testLocation (location) {
 	disableButton("west");
     }
 
-    else if (bool_presentation === false && location === "Crew Presentation Room") {
+    else if (location === "Crew Presentation Room") {
 	if(bool_presentation === false) {
 	    bool_presentation = true;
 	    score += 5;
-
 	}
+	disableButton("north");
+	disableButton("east");
+	disableButton("west");
     }
 
     else if (location === "VIP Residential Sector Corridor") {
@@ -256,6 +262,35 @@ function testLocation (location) {
 	}
 	enableAllButtons();
 
+    }
+
+    else if (location === "Luxury Space Bar") {
+	if(bool_bar === false) {
+	    score += 5;
+	    bool_bar = true;
+	}
+	disableButton("south");
+	disableButton("east");
+	disableButton("west");
+    }
+    else if (location === "Unlocked Supply Closet") {
+	if(bool_closet === false) {
+	    score += 5;
+	    bool_closet = true;
+	}
+	disableButton("north");
+	disableButton("east");
+	disableButton("west");
+    }
+    else {
+	//if restroom
+	if(bool_restroom === false) {
+	    score += 5;
+	    bool_restroom = true;
+	}
+	disableButton("south");
+	disableButton("east");
+	disableButton("west");
     }
 }
 
