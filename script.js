@@ -204,16 +204,18 @@ function parseInput() {
     var input = textfield.value;
     textfield.value = "";
     //    alert(input);
-    if(input === "N" || input === "n" || input === "north") {
+    input.toLowerCase(); //important to make conditionals easier and just test for word input rather than having to worry about case.
+
+    if(input === "n" || input === "north") {
         but_north();
     }
-    else if (input === "S" || input === "south" || input === "s") {
+    else if (input === "south" || input === "s") {
         but_south();
     }
-    else if (input === "E" || input === "e" || input === "east") {
+    else if (input === "e" || input === "east") {
         but_east();
     }
-    else if (input === "W" || input === "w" || input === "west") {
+    else if (input === "w" || input === "west") {
         but_west();
     }
     else {
