@@ -234,8 +234,8 @@ function testLocation (location) {
 	}
 
 	disableButton("north");
-	disableButton("East");
-	disableButton("West");
+	disableButton("east");
+	disableButton("west");
     }
 
     else if (bool_presentation === false && location === "Crew Presentation Room") {
@@ -294,18 +294,29 @@ function disableButton(direction) {
     if (direction === "north") {
 	bool_canNorth = false;
 	but = document.getElementById("n");
+	but.disabled = true;
     }
     
-    if (direction === "south") {
+    else if (direction === "south") {
 	bool_canSouth = false;
+	but = document.getElementById("s");
+	but.disabled = true;
     }
     
-    if(direction === "east") {
+    else if (direction === "east") {
 	bool_canEast = false;
+	but = document.getElementById("e");
+	but.disabled = true;
     }
-    if(direction === "west") {
+    else if (direction === "west") {
 	
 	bool_canWest = false;
+	but = document.getElementById("w");
+	but.disabled = true;
     }
 
+}
+
+function enableAllButtons() {
+    
 }
