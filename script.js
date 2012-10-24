@@ -255,3 +255,7 @@ function parseInput() {
         updateText("I don't understand that");
     }
 }
+
+function disableButton(direction) {
+    //Disables button associated with string.
+}
