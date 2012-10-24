@@ -135,15 +135,18 @@ function getLocation() {
     }
 
     else if (xpos === 1 && ypos === 3) {
-	testLocation("Luxury Space Bar.");
+	testLocation("Luxury Space Bar");
+	return "Luxury Space Bar";
     }
 
     else if (xpos === 2 && ypos === 6) {
 	testLocation("Unlocked Supply Closet");
+	return "Unlocked Supply Closet";
     }
     
     else if (xpos === 0 && ypos === 2) {
 	testLocation("Public Restroom");
+	return "Public Restroom";
     }
 
     
@@ -155,7 +158,7 @@ function getLocation() {
     else if (xpos >= xupbound || ypos >= yupbound || xpos <= xlowbound || ypos <= ylowbound) {
 
 	/* first test includes positions equal to the boundary,
-	 that will yield bottom location warning to be returned 
+	 that will yield bottom location warning to be returned.
 	 these tests are for pushing back the player if he does
 	 in fact exceed the boundary */
 
@@ -218,6 +221,12 @@ function testLocation (location) {
 	score += 5;
 	bool_corridor = true;
 	
+    }
+    else if (location === "Luxury Space Bar") {
+	if(bool_bar === false){
+	    score+=5;
+	}
+		
     }
 }
 
