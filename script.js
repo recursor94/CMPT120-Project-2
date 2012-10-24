@@ -31,6 +31,11 @@ var bool_corridor = false;
 var bool_bar = false;
 var bool_closet = false;
 var bool_restroom = false;
+//vars for testing if you can move or not. Used in direction functions.
+var bool_canNorth = true;
+var bool_canSouth = true;
+var bool_canEast = true;
+var bool_canWest = true;
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
 		    + "These Commands move the player one unit in that direction\n"
