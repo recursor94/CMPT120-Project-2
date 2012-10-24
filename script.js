@@ -233,9 +233,9 @@ function testLocation (location) {
 	    bool_kitchen = true;
 	}
 
-	bool_canNorth = false;
-	bool_canEast = false;
-	bool_canWest = false;
+	disableButton("north");
+	disableButton("East");
+	disableButton("West");
     }
 
     else if (bool_presentation === false && location === "Crew Presentation Room") {
@@ -245,7 +245,8 @@ function testLocation (location) {
     }
 
     else if (location === "VIP Residential Sector Corridor") {
-
+	//Whenever the user returns to the corridor, he can once again
+	//move in any direction.
 	if(bool_corridor === false) {
 	    score += 5;
 	    bool_corridor = true;
@@ -288,4 +289,20 @@ function parseInput() {
 
 function disableButton(direction) {
     //Disables button associated with string.
+    if (direction === "north") {
+	bool_canNorth = false;
+    }
+    
+    if (direction === "south") {
+	bool_canSouth = false;
+    }
+    
+    if(direction === "east") {
+	bool_canEast = false;
+    }
+    if(direction === "west") {
+	
+	bool_canWest = false;
+    }
+
 }
