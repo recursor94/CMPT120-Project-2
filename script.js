@@ -259,11 +259,15 @@ function testLocation (location) {
 	//have to enable all buttons first so that when leaving a room it appears properly
 	enableAllButtons();
 	disableButton("east");
+	disableButton ("north");
+	disableButton ("south");
     }
 
     else if (location === "leftbound") {
 	enableAllButtons();
 	disableButton("west");
+	disableButton ("north");
+	disableButton ("south");
     }
     else {
 	//if restroom
