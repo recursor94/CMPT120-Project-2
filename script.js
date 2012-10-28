@@ -39,13 +39,25 @@ var bool_canWest = false; //we start in a room south of the hall, so all we can 
 
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
-		    + "These Commands move the player one unit in that direction\n"
-		    + "Ex: North increments y position by one,"
-		    + " West decrements x positon by one."
-		    + "\nShorthand commands n,s,w,e correspond to North, South"
-		    + " East and West respectively."
-		    + " The input parser is case insensitive.";
+    + "These Commands move the player one unit in that direction\n"
+    + "Ex: North increments y position by one,"
+    + " West decrements x positon by one."
+    + "\nShorthand commands n,s,w,e correspond to North, South"
+    + " East and West respectively."
+    + " The input parser is case insensitive.";
 
+/*function that responds to input prompt if debug commands are detected in
+parse input. Made for testing purposes when big changes occur and the situation
+that I desire to be tested can not yet be obtained directly in the game
+environment. */
+
+function admin_debug (com) {
+    if (com === "setpos") {
+        xpos = prompt ("Enter a new player x position");
+        ypos = prompt ("Enter a new player y position");
+    }
+        
+}
 
 function but1() {
     var greeting = "Hello, ";
@@ -70,7 +82,7 @@ function updateText(msg) {
         + "You are now in the " + msg + "\nScore: " + score
 	+ " current coordinates: " + testcoords();
     //    alert("You made it here fine.");
-        textArea.scrollTop = textArea.scrollHeight;
+    textArea.scrollTop = textArea.scrollHeight;
 }
 
 function but_north() {
@@ -139,46 +151,46 @@ function testcoords () {
 }
 
 function getLocation() {
-//case statements for switch
+    //case statements for switch
     switch (y) {
-//case 1 should be tested first, because it is the easiest to deal with
-        case 1: 
+        //case 1 should be tested first, because it is the easiest to deal with
+    case 1: 
         return corridor ();
         break;
         
     }
 
-/*    if(xpos === 0 && ypos === 0) {
-	
-	testLocation("Luxurious Suite");
-	return "Luxurious Suite";
-    }
-    else if (xpos === 0 && ypos === 2) {
+    /*    if(xpos === 0 && ypos === 0) {
+     
+     testLocation("Luxurious Suite");
+     return "Luxurious Suite";
+     }
+     else if (xpos === 0 && ypos === 2) {
 
-	testLocation("Civilian Kitchen");
-	return "Civilian Kitchen";
-    }
-    
-    else if (xpos === 1 && ypos === 2) {
-	
-	testLocation("Crew Presentation Room");
-	return "Crew Presentation Room";
-    }
+     testLocation("Civilian Kitchen");
+     return "Civilian Kitchen";
+     }
+     
+     else if (xpos === 1 && ypos === 2) {
+     
+     testLocation("Crew Presentation Room");
+     return "Crew Presentation Room";
+     }
 
-    else if (xpos === 1 && ypos === 0) {
-	testLocation("Luxury Space Bar");
-	return "Luxury Space Bar";
-    }
+     else if (xpos === 1 && ypos === 0) {
+     testLocation("Luxury Space Bar");
+     return "Luxury Space Bar";
+     }
 
-    else if (xpos === 2 && ypos === 2) {
-	testLocation("Unlocked Supply Closet");
-	return "Unlocked Supply Closet";
-    }
-    
-    else if (xpos === 2 && ypos === 0) {
-	testLocation("Public Restroom");
-	return "Public Restroom";
-    } */
+     else if (xpos === 2 && ypos === 2) {
+     testLocation("Unlocked Supply Closet");
+     return "Unlocked Supply Closet";
+     }
+     
+     else if (xpos === 2 && ypos === 0) {
+     testLocation("Public Restroom");
+     return "Public Restroom";
+     } */
 
     
     //conditional for game boundaries
@@ -297,7 +309,11 @@ function parseInput() {
     //    alert(input);
     input = input.toLowerCase(); //important to make conditionals easier and just test for word input rather than having to worry about case.
     //    alert(input);
-
+    //this will simply go through doing nothing if it is not a
+    //debug command, so why not do it?
+    alert ("before");
+    admin_debug(input);
+    alert ("after");
     if(input === "n" || input === "north") {
         but_north();
     }
