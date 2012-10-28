@@ -143,7 +143,6 @@ function getLocation() {
     switch (y) {
 //case 1 should be tested first, because it is the easiest to deal with
         case 1: 
-        
         return corridor ();
         break;
         
@@ -359,4 +358,4 @@ function enableAllButtons() {
     bool_canSouth = true;
     bool_canEast = true;
     bool_canWest = true;
-})
+}
