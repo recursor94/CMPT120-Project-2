@@ -140,7 +140,7 @@ function testcoords () {
 
 function getLocation() {
 
-    if(xpos === 0 && ypos === 0) {
+/*    if(xpos === 0 && ypos === 0) {
 	
 	testLocation("Luxurious Suite");
 	return "Luxurious Suite";
@@ -170,7 +170,7 @@ function getLocation() {
     else if (xpos === 2 && ypos === 0) {
 	testLocation("Public Restroom");
 	return "Public Restroom";
-    }
+    } */
 
     
     //conditional for game boundaries
