@@ -82,6 +82,7 @@ function updateText(msg) {
         + "You are now in the " + msg + "\nScore: " + score
 	+ " current coordinates: " + testcoords();
     //    alert("You made it here fine.");
+    //This is the scrolling adjustment line:
     textArea.scrollTop = textArea.scrollHeight;
 }
 
