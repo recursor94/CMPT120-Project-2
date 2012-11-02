@@ -55,6 +55,8 @@ function admin_debug (com) {
     if (com === "setpos") {
         xpos = prompt ("Enter a new player x position");
         ypos = prompt ("Enter a new player y position");
+        alert ("(" + xpos + ", " + ypos);
+        getLocation ();
     }
         
 }
@@ -156,7 +158,7 @@ function getLocation() {
     switch (y) {
         //case 1 should be tested first, because it is the easiest to deal with
     case 1: 
-        return corridor ();
+        corridor ();
         break;
         
     }
@@ -201,7 +203,7 @@ function getLocation() {
      will be pushed back to the hall if tries to push forward. */
     //boundary is x = 3 so he will not be able to continue forward
     //after that point.
-    else if (xpos >= 3) {
+/*    else if (xpos >= 3) {
 	testLocation ("Corridor Outer Limits");
 	return "Corridor Outer Limits";
 	
@@ -214,8 +216,8 @@ function getLocation() {
     else {
 	testLocation("VIP Residential Sector Corridor");
 	return "VIP Residential Sector Corridor";
-    }
-}
+    } */
+} 
 
 function testLocation (location) {
     if(location === "Luxurious Suite") {
@@ -312,9 +314,7 @@ function parseInput() {
     //    alert(input);
     //this will simply go through doing nothing if it is not a
     //debug command, so why not do it?
-    alert ("before");
-    admin_debug(input);
-    alert ("after");
+   admin_debug(input);
     if(input === "n" || input === "north") {
         but_north();
     }
@@ -375,4 +375,13 @@ function enableAllButtons() {
     bool_canSouth = true;
     bool_canEast = true;
     bool_canWest = true;
+}
+
+//LOCATION EVENT HANDLERS START HERE
+
+
+function corridor() {
+    //temporary place holder for proof of success, will update later with
+    //location specific logic as in testLocation
+    alert ("You are now in the corridor");
 }
