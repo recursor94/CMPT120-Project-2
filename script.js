@@ -154,13 +154,18 @@ function testcoords () {
 }
 
 function getLocation() {
-    //case statements for switch
-    switch (y) {
-        //case 1 should be tested first, because it is the easiest to deal with
-    case 1: 
+    alert ("getLocation ()");
+    alert("ypos:" + ypos);
+    //Switch statements
+    switch (ypos) {
+    case 1:
+        alert (1);
         corridor ();
         break;
         
+    default:
+        boundary();
+        break;
     }
 
     /*    if(xpos === 0 && ypos === 0) {
@@ -384,4 +389,13 @@ function corridor() {
     //temporary place holder for proof of success, will update later with
     //location specific logic as in testLocation
     alert ("You are now in the corridor");
+}
+
+function boundary() {
+    /*Should be default switch case; this is the case for boundaries.
+     * will likely test for right bound or left bound and take the appropriate
+     * button disabling action. In the interest of concision and clarity,
+     * it is probably best to put all boundary code in one function.
+     */
+    alert("player has reached a boundary");
 }
