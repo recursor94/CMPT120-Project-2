@@ -1,7 +1,12 @@
 <!DOCTYPE HTML>
-<script language = "javascript" src="script.js"> </script>
+<!--include script for basic game logic first, and
+    for locations logic second. WRONG--FIXED:Locations must be
+    loaded first for script.js to call location functions.
+-->
+<script src="locations.js" type="text/javascript"></script>
+<script src="script.js" type="text/javascript"> </script>
 <html>
-  <!-- Andrew J. Spanop
+  <!-- Andrew J. Spano
        September 2, 2012
        Project 1 - My First Web Page -->
   <head>
