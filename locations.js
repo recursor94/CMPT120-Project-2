@@ -1,9 +1,19 @@
 //LOCATION EVENT HANDLERS START HERE
 
+/*variables prefixed by can or visited_ are global booleans
+ * declared and initialized in scripts.js. visited_ booleans are flags used to
+ * calculate the score. As of this version, when a player visits a new location,
+ * his score is incremented by 5. But if a player has visited a location already
+ * his score must not be changed when he visits it again.*/
 
 function corridor() {
     //temporary place holder for proof of success, will update later with
     //location specific logic as in testLocation
+    if(visited_corridor === false) {
+        score = score + 5;
+        visited_corridor = true;
+    }
+    
     return "corridor";
 }
 
