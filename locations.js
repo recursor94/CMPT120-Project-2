@@ -4,7 +4,7 @@
 function corridor() {
     //temporary place holder for proof of success, will update later with
     //location specific logic as in testLocation
-    alert ("You are now in the corridor");
+    return "You are now in the corridor";
 }
 
 function boundary() {
@@ -13,31 +13,31 @@ function boundary() {
      * button disabling action. In the interest of concision and clarity,
      * it is probably best to put all boundary code in one function.
      */
-    alert("You have reached a boundary");
+    return "You have reached a boundary";
 }
 
 function suite () {
-    alert("You have entered your suite");
+    return("You have entered your suite");
 }
 
 function kitchen() {
-    alert("You have entered the Kitchen.");
+    return "You have entered the Kitchen.";
 }
 
 function presentationRoom() {
-    alert("You have entered the Presentation room");
+    return "You have entered the Presentation room";
 }
 
 function bar(){
-    alert("You have entered the space bar");
+    return "You have entered the space bar";
 }
 
 function closet() {
-    alert("You have entered the closet");
+    return "You have entered the closet";
 }
 
 function restroom() {
-    alert("You have entered the restroom");
+    return "You have entered the restroom";
 }
 
 /*The proceeding functions are for the three new locations, they
@@ -46,18 +46,18 @@ function restroom() {
 
 function armory() {
     //The player will find his first weapon--the space laser gun here
-    alert("You have entered the armory.");
+    return "You have entered the armory.";
 }
 
 function hospitalRoom() {
-    alert("You have entered the hospital room.");
+    return "You have entered the hospital room.";
 }
 
 function freightDeck() {
-    alert("You have entered the freight deck.");
+    return "You have entered the freight deck.";
     //Note:possibility of a discarded empty freight container location?
 }
 
 function office() {
-    alert("You have entered the office.");
+    return "You have entered the office.";
 }

@@ -167,38 +167,38 @@ function getLocation() {
         
     case 0:
         if(xpos === 0){
-            suite();
+            return suite();
         }
         else if (xpos === 1) {
-            bar();
+            return bar();
         }
         else if(xpos === 2){
-            restroom();
+            return restroom();
         }
         else if(xpos === 3) {
-            armory();
+            return armory();
         }
         else if(xpos === 4) {
-            freightDeck();
+            return freightDeck();
         }
         break;
 
     case 2:
         if(xpos === 0) {
-            kitchen();
+            return kitchen();
         }
         else if (xpos === 1) {
-            presentationRoom();
+            return presentationRoom();
         }
         else if(xpos === 2) {
-            closet();
+            return closet();
             
         }
         else if(xpos === 3) {
-            hospitalRoom();
+            return hospitalRoom();
         }
         else if(xpos === 4) {
-            office();
+            return office();
         }
         break;
         
@@ -206,7 +206,7 @@ function getLocation() {
 //Well if it isn't the hallway or some unique location, then the player
 //is definitely at a boundary
     default: 
-        boundary();
+        return boundary();
         break;
     }
 
