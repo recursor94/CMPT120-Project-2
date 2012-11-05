@@ -162,7 +162,7 @@ function getLocation() {
     //the corridor.
     switch (ypos) {
     case 1:
-        corridor ();
+        return corridor ();
         break;
         
     case 0:
