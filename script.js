@@ -154,16 +154,53 @@ function testcoords () {
 }
 
 function getLocation() {
-    alert ("getLocation ()");
-    alert("ypos:" + ypos);
+    //    alert ("getLocation ()");
+    //  alert("ypos:" + ypos);
     //Switch statements
+    //using y position as a test variable because it is easier
+    //to put corridor possibility in one case, since y position of 1 is always
+    //the corridor.
     switch (ypos) {
     case 1:
-        alert (1);
         corridor ();
         break;
         
-    default:
+    case 0:
+        if(xpos === 0){
+            suite();
+        }
+        else if (xpos === 1) {
+            bar();
+        }
+        else if(xpos === 2){
+            restroom();
+        }
+        else if(xpos === 3) {
+            armory();
+        }
+        else if(xpos === 4) {
+            freightDeck();
+        }
+        break;
+
+    case 2:
+        if(xpos === 0) {
+            kitchen();
+        }
+        else if (xpos === 1) {
+            presentationRoom();
+        }
+        else if(xpos === 2) {
+            closet();
+            
+        }
+        else if(xpos === 3) {
+            hospitalRoom();
+        }
+        
+//Well if it isn't the hallway or some unique location, then the player
+//is definitely at a boundary
+    default: 
         boundary();
         break;
     }
