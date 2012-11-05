@@ -6,6 +6,8 @@
  * his score is incremented by 5. But if a player has visited a location already
  * his score must not be changed when he visits it again.*/
 
+//score is a global variable declared in scripts.js that represents the players score.
+
 function corridor() {
     //temporary place holder for proof of success, will update later with
     //location specific logic as in testLocation
