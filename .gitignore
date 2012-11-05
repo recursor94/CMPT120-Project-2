@@ -1,3 +1,5 @@
 #ignore these file rules
 *#*
 *~*
+#The tags file is just for emacs autocompletion, ignore.
+TAGS
