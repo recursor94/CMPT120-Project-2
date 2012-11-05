@@ -25,17 +25,17 @@ var xlowbound = -6;
 var yupbound = 6;
 var ylowbound = -6;
 var score = 0;
-var bool_kitchen = false;
-var bool_presentation = false;
-var bool_corridor = false;
-var bool_bar = false;
-var bool_closet = false;
-var bool_restroom = false;
+var visited_kitchen = false;
+var visited_presentation = false;
+var visited_corridor = false;
+var visited_bar = false;
+var visited_closet = false;
+var visited_restroom = false;
 //vars for testing if you can move or not. Used in direction functions.
-var bool_canNorth = true;
-var bool_canSouth = false;
-var bool_canEast = false;
-var bool_canWest = false; //we start in a room south of the hall, so all we can move is north initially.
+var canNorth = true;
+var canSouth = false;
+var canEast = false;
+var canWest = false; //we start in a room south of the hall, so all we can move is north initially.
 
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
@@ -92,7 +92,7 @@ function but_north() {
     //test alert
     //    alert("but north function entered");
 
-    if (bool_canNorth === false) {
+    if (canNorth === false) {
 	updateText ("predicament of not being able to move in this direction");
 	return;
     }
@@ -107,7 +107,7 @@ function but_north() {
 function but_south() {
     //test alert
     //alert("but south function entered");
-    if (bool_canSouth === false) {
+    if (canSouth === false) {
 	updateText("predicament of not being able to move in this direction");
 	return;
     }
@@ -122,7 +122,7 @@ function but_south() {
 function but_east() {
     //test alert
     // alert("but east function entered");
-    if (bool_canEast === false) {
+    if (canEast === false) {
 	updateText ("predicament of not being able to move in this direction");
 	return;
     }
@@ -137,7 +137,7 @@ function but_east() {
 function but_west() {
     //test alert
     //alert("but west function entered");
-    if (bool_canWest === false) {
+    if (canWest === false) {
 	updateText("predicament of not being able to move in this direction");
 	return;
     }
@@ -274,9 +274,9 @@ function testLocation (location) {
     }
     else if(location === "Civilian Kitchen") {
 
-	if(bool_kitchen === false) {
+	if(visited_kitchen === false) {
 	    score+=5;
-	    bool_kitchen = true;
+	    visited_kitchen = true;
 	}
 
 	disableButton("north");
@@ -285,8 +285,8 @@ function testLocation (location) {
     }
 
     else if (location === "Crew Presentation Room") {
-	if(bool_presentation === false) {
-	    bool_presentation = true;
+	if(visited_presentation === false) {
+	    visited_presentation = true;
 	    score += 5;
 	}
 	disableButton("north");
@@ -297,9 +297,9 @@ function testLocation (location) {
     else if (location === "VIP Residential Sector Corridor") {
 	//Whenever the user returns to the corridor, he can once again
 	//move in any direction.
-	if(bool_corridor === false) {
+	if(visited_corridor === false) {
 	    score += 5;
-	    bool_corridor = true;
+	    visited_corridor = true;
 	    
 	}
 	enableAllButtons();
@@ -307,18 +307,18 @@ function testLocation (location) {
     }
 
     else if (location === "Luxury Space Bar") {
-	if(bool_bar === false) {
+	if(visited_bar === false) {
 	    score += 5;
-	    bool_bar = true;
+	    visited_bar = true;
 	}
 	disableButton("south");
 	disableButton("east");
 	disableButton("west");
     }
     else if (location === "Unlocked Supply Closet") {
-	if(bool_closet === false) {
+	if(visited_closet === false) {
 	    score += 5;
-	    bool_closet = true;
+	    visited_closet = true;
 	}
 	disableButton("north");
 	disableButton("east");
@@ -341,9 +341,9 @@ function testLocation (location) {
     }
     else {
 	//if restroom
-	if(bool_restroom === false) {
+	if(visited_restroom === false) {
 	    score += 5;
-	    bool_restroom = true;
+	    visited_restroom = true;
 	}
 	disableButton("south");
 	disableButton("east");
@@ -384,25 +384,25 @@ function disableButton(direction) {
     var but = null;
 
     if (direction === "north") {
-	bool_canNorth = false;
+	canNorth = false;
 	but = document.getElementById("n");
 	but.disabled = true;
     }
     
     else if (direction === "south") {
-	bool_canSouth = false;
+	canSouth = false;
 	but = document.getElementById("s");
 	but.disabled = true;
     }
     
     else if (direction === "east") {
-	bool_canEast = false;
+	canEast = false;
 	but = document.getElementById("e");
 	but.disabled = true;
     }
     else if (direction === "west") {
 	
-	bool_canWest = false;
+	canWest = false;
 	but = document.getElementById("w");
 	but.disabled = true;
     }
@@ -418,8 +418,8 @@ function enableAllButtons() {
     but.disabled = false;
     but = document.getElementById("w");
     but.disabled = false;
-    bool_canNorth = true;
-    bool_canSouth = true;
-    bool_canEast = true;
-    bool_canWest = true;
+    canNorth = true;
+    canSouth = true;
+    canEast = true;
+    canWest = true;
 }
