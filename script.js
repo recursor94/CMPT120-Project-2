@@ -197,6 +197,11 @@ function getLocation() {
         else if(xpos === 3) {
             hospitalRoom();
         }
+        else if(xpos === 4) {
+            office();
+        }
+        break;
+        
         
 //Well if it isn't the hallway or some unique location, then the player
 //is definitely at a boundary

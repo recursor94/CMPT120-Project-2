@@ -57,3 +57,7 @@ function freightDeck() {
     alert("You have entered the freight deck.");
     //Note:possibility of a discarded empty freight container location?
 }
+
+function office() {
+    alert("You have entered the office.");
+}
