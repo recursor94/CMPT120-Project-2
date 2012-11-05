@@ -15,7 +15,7 @@ function corridor() {
         score = score + 5;
         visited_corridor = true;
     }
-    
+    enableAllButtons();
     return "corridor";
 }
 
@@ -29,7 +29,10 @@ function boundary() {
 }
 
 function suite () {
-    return("suite");
+    disableButton("south");
+    disableButton("east");
+    disableButton("west");
+    return "suite";
 }
 
 function kitchen() {
