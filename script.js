@@ -16,13 +16,8 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
-var username;
 var xpos = 0;
 var ypos = 0;
-var xupbound = 6;
-var xlowbound = -6;
-var yupbound = 6;
-var ylowbound = -6;
 var score = 5;
 var visited_kitchen = false;
 var visited_presentation = false;
