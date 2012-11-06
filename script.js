@@ -48,6 +48,10 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + " West decrements x positon by one."
     + "\nShorthand commands n,s,w,e correspond to North, South"
     + " East and West respectively."
+    + " The 'take' command should preceed the name of a valid item in"
+    + " the current location. the take command will remove the identified\n"
+    + " object from the game world, and add it to the player's inventory.\n"
+    + "The help command displays this text."
     + " The input parser is case insensitive.";
 
 /*function that responds to input prompt if debug commands are detected in
@@ -79,17 +83,23 @@ function updateText(msg) {
     if(msg === "I don't understand that") {
         textArea.value = textArea.value + "\n" + msg + validCommands;
         textArea.scrollTop = textArea.scrollHeight;
-        return;
+    }
+    //have to make sure that if the player enters help, he doesn't get the
+    //"you are now in the" message.
+    else if(msg === validCommands) {
+        textArea.value = textArea.value + "\n" + msg;
+        textArea.scrollTop = textArea.scrollHeight;
     }
     
-    textArea.value = textArea.value + "\n\n" 
-        + "You are now in the " + msg + "\nScore: " + score
-	+ " current coordinates: " + testcoords();
-    //    alert("You made it here fine.");
-    //This is the scrolling adjustment line:
-    textArea.scrollTop = textArea.scrollHeight;
+    else {
+        textArea.value = textArea.value + "\n\n" 
+            + "You are now in the " + msg + "\nScore: " + score
+	    + " current coordinates: " + testcoords();
+        //    alert("You made it here fine.");
+        //This is the scrolling adjustment line:
+        textArea.scrollTop = textArea.scrollHeight;
+    }
 }
-
 function but_north() {
     //test alert
     //    alert("but north function entered");
@@ -321,7 +331,6 @@ function parseInput() {
     //    alert(input);
     //this will simply go through doing nothing if it is not a
     //debug command, so why not do it?
-   admin_debug(input);
     if(input === "n" || input === "north") {
         but_north();
     }
@@ -333,6 +342,9 @@ function parseInput() {
     }
     else if (input === "w" || input === "west") {
         but_west();
+    }
+    else if (input === "help") {
+        updateText(validCommands);
     }
     else {
         updateText("I don't understand that");

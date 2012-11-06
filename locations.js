@@ -33,6 +33,7 @@ function boundary() {
     else if(xpos > 4) {
         disableButton("north");
         disableButton("east");
+        disableButton("south");
     }
     return "boundary, you can not proceed in this direction.";
 }
