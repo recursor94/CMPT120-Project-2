@@ -11,7 +11,7 @@
 function corridor() {
     //temporary place holder for proof of success, will update later with
     //location specific logic as in testLocation
-    if(visited_corridor === false) {
+    if(!visited_corridor) {
         score = score + 5;
         visited_corridor = true;
     }
@@ -29,6 +29,8 @@ function boundary() {
 }
 
 function suite () {
+ //Doesn't need a conditional or boolean flag because it will never
+ //be a new location the score just starts at five.
     disableButton("south");
     disableButton("east");
     disableButton("west");
@@ -36,22 +38,57 @@ function suite () {
 }
 
 function kitchen() {
-    return "kitchen.";
+    if(!visited_kitchen) {
+        score = score + 5;
+        visited_kitchen = true;
+    }
+    disableButton("north");
+    disableButton("east");
+    disableButton("west");
+    return "kitchen";
 }
 
 function presentationRoom() {
+    if(!visited_presentation) {
+        score = score + 5;
+        visited_presentation = true;
+    }
+    disableButton("north");
+    disableButton("east");
+    disableButton("west");
     return "presentation room";
 }
 
 function bar(){
+    if(!visited_bar) {
+        score = score + 5;
+        visited_bar = true;
+    }
+    disableButton("south");
+    disableButton("east");
+    disableButton("west");
     return "space bar";
 }
 
 function closet() {
+    if(!visited_closet) {
+        score = score + 5;
+        visited_closet = true;
+    }
+    disableButton("north");
+    disableButton("east");
+    disableButton("west");
     return "closet";
 }
 
 function restroom() {
+    if(!visited_restroom) {
+        score = score + 5;
+        visited_restroom = true;
+    }
+    disableButton("south");
+    disableButton("east");
+    disableButton("west");
     return "restroom";
 }
 
@@ -61,18 +98,47 @@ function restroom() {
 
 function armory() {
     //The player will find his first weapon--the space laser gun here
-    return "armory.";
+
+    if(!visited_armory) {
+        score = score + 5;
+        visited_armory = true;
+    }
+    disableButton("south");
+    disableButton("east");
+    disableButton("west");
+    return "armory";
 }
 
 function hospitalRoom() {
-    return "hospital room.";
+    if(!visited_hospitalRoom) {
+        score = score + 5;
+        visited_hospitalRoom = true;
+    }
+    disableButton("north");
+    disableButton("east");
+    disableButton("west");
+    return "hospital room";
 }
 
 function freightDeck() {
+    if(!visited_freightDeck) {
+        score = score + 5;
+        visited_freightDeck = true;
+    }
+    disableButton("south");
+    disableButton("east");
+    disableButton("west");
     return "freight deck.";
     //Note:possibility of a discarded empty freight container location?
 }
 
 function office() {
+    if(!visited_office) {
+        score = score + 5;
+        visited_office = true;
+    }
+    disableButton("north");
+    disableButton("south");
+    disableButton("west");
     return "office.";
 }

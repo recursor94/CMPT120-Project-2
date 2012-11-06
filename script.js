@@ -24,13 +24,17 @@ var xupbound = 6;
 var xlowbound = -6;
 var yupbound = 6;
 var ylowbound = -6;
-var score = 0;
+var score = 5;
 var visited_kitchen = false;
 var visited_presentation = false;
 var visited_corridor = false;
 var visited_bar = false;
 var visited_closet = false;
 var visited_restroom = false;
+var visited_armory = false;
+var visited_hospitalRoom = false;
+var visited_freightDeck = false;
+var visited_office = false;
 //vars for testing if you can move or not. Used in direction functions.
 var canNorth = true;
 var canSouth = false;
@@ -162,7 +166,9 @@ function getLocation() {
     //the corridor.
     switch (ypos) {
     case 1:
-        return corridor ();
+        if(xpos >= 0 && xpos <= 4) {
+            return corridor ();
+        }
         break;
         
     case 0:
