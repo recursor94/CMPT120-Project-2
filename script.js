@@ -16,7 +16,6 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
-var textArea;
 var username;
 var xpos = 0;
 var ypos = 0;
@@ -75,7 +74,7 @@ function admin_debug (com) {
 }
 
 function updateText(msg) {
-    textArea = document.getElementById("gametext");
+    var textArea = document.getElementById("gametext");
     //    alert("function has been called.");
     //    alert(textArea).value;
 
