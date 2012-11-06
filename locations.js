@@ -7,7 +7,9 @@
  * his score must not be changed when he visits it again.*/
 
 //score is a global variable declared in scripts.js that represents the players score.
-
+//Most locations should have some item in here
+//perhaps in the future it would be useful to define
+//each location as an object with an item attribute.
 function corridor() {
     //temporary place holder for proof of success, will update later with
     //location specific logic as in testLocation
@@ -25,6 +27,7 @@ function boundary() {
      * button disabling action. In the interest of concision and clarity,
      * it is probably best to put all boundary code in one function.
      */
+
     if(xpos < 0) {
         disableButton("north");
         disableButton("south");

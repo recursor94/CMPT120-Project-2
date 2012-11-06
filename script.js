@@ -34,7 +34,7 @@ var canNorth = true;
 var canSouth = false;
 var canEast = false;
 var canWest = false; //we start in a room south of the hall, so all we can move is north initially.
-
+var takeable = [];
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + "These Commands move the player one unit in that direction\n"
@@ -54,13 +54,17 @@ that I desire to be tested can not yet be obtained directly in the game
 environment. */
 
 //GAME OBJECTS DEFINED HERE
-
+var takeable = function (_loc, _itom) {
+    this.loc = _loc;
+    this.itom = _itom;
+};
 var Player = function () {
     /*The player object currently only has an inventory array.
      * While this could just be represented by an array, it is better
      * to wrap it inside a player object so that it will be easier
      * to add new attributes to the player as the game evolves.
      */
+    this.inventorySize = 3;
     this.inventory = new Array();
     this.inventory[1] = "Andrew";
     this.inventory[2] = 18.5;
@@ -97,6 +101,10 @@ function admin_debug (com) {
         alert ("(" + xpos + ", " + ypos);
         getLocation ();
     }
+        
+}
+function take() {
+    if(getLocation() === "suite") {
         
 }
 
