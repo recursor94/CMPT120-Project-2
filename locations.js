@@ -25,6 +25,15 @@ function boundary() {
      * button disabling action. In the interest of concision and clarity,
      * it is probably best to put all boundary code in one function.
      */
+    if(xpos < 0) {
+        disableButton("north");
+        disableButton("south");
+        disableButton("west");
+    }
+    else if(xpos > 4) {
+        disableButton("north");
+        disableButton("east");
+    }
     return "boundary, you can not proceed in this direction.";
 }
 
@@ -138,7 +147,7 @@ function office() {
         visited_office = true;
     }
     disableButton("north");
-    disableButton("south");
     disableButton("west");
+    disableButton("east");
     return "office.";
 }

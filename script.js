@@ -169,6 +169,15 @@ function getLocation() {
         if(xpos >= 0 && xpos <= 4) {
             return corridor ();
         }
+        /*This seems like a sloppy solution, which is a shame, because I thought
+         * that the default switch case was a perfect solution.
+         */
+        //JUST LEARNED SOMETHING COOL--IF YOU UPDATE A TEXTAREA
+        //WITHOUT ITS PARENTHESIS, THE BODY OF THE FUNCTION WILL APPEAR
+        //INSTEAD OF THE RESULT OF THE FUNCTION
+        else {
+            return boundary();
+        }
         break;
         
     case 0:
@@ -211,66 +220,13 @@ function getLocation() {
         
 //Well if it isn't the hallway or some unique location, then the player
 //is definitely at a boundary
-    default: 
+    default:
+        alert("if you are at a boundary, this should be executed.");
         return boundary();
         break;
     }
+}
 
-    /*    if(xpos === 0 && ypos === 0) {
-     
-     testLocation("Luxurious Suite");
-     return "Luxurious Suite";
-     }
-     else if (xpos === 0 && ypos === 2) {
-
-     testLocation("Civilian Kitchen");
-     return "Civilian Kitchen";
-     }
-     
-     else if (xpos === 1 && ypos === 2) {
-     
-     testLocation("Crew Presentation Room");
-     return "Crew Presentation Room";
-     }
-
-     else if (xpos === 1 && ypos === 0) {
-     testLocation("Luxury Space Bar");
-     return "Luxury Space Bar";
-     }
-
-     else if (xpos === 2 && ypos === 2) {
-     testLocation("Unlocked Supply Closet");
-     return "Unlocked Supply Closet";
-     }
-     
-     else if (xpos === 2 && ypos === 0) {
-     testLocation("Public Restroom");
-     return "Public Restroom";
-     } */
-
-    
-    //conditional for game boundaries
-    /* The boundary reached message will always be displayed no matter
-     where the player is in one direction if he is at the boundary in
-     the other direction. I have decided that this is desireable. He 
-     will be pushed back to the hall if tries to push forward. */
-    //boundary is x = 3 so he will not be able to continue forward
-    //after that point.
-/*    else if (xpos >= 3) {
-	testLocation ("Corridor Outer Limits");
-	return "Corridor Outer Limits";
-	
-    }
-    else if (xpos <= -1) {
-	testLocation("leftbound");
-	return "VIP Residential Sector Corridor";
-    }
-
-    else {
-	testLocation("VIP Residential Sector Corridor");
-	return "VIP Residential Sector Corridor";
-    } */
-} 
 
 function testLocation (location) {
     if(location === "Luxurious Suite") {
