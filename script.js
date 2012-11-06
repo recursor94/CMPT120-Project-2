@@ -54,7 +54,12 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
 parse input. Made for testing purposes when big changes occur and the situation
 that I desire to be tested can not yet be obtained directly in the game
 environment. */
-
+function init() {
+    disableButton("south");
+    disableButton("east");
+    disableButton("west");
+    updateText(getLocation());
+}
 function admin_debug (com) {
     if (com === "setpos") {
         xpos = prompt ("Enter a new player x position");
