@@ -65,13 +65,6 @@ function admin_debug (com) {
         
 }
 
-function but1() {
-    var greeting = "Hello, ";
-    username = prompt("What is your name, friend?");
-    confirm(greeting + username + ". Do you want to play a game?");
-    var result = prompt("How are you feeling?");
-    alert("You are feeling " + result + "? I am glad to hear that!");
-}
 function updateText(msg) {
     textArea = document.getElementById("gametext");
     //    alert("function has been called.");
