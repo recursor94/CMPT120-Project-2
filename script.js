@@ -74,6 +74,17 @@ var Player = function () {
     };
 };
 
+var Item = function (_name, _type) {
+    //The item object shall be the super class of all in game items that can be
+    //taken with take.
+
+    this.name = _name;
+    this.type = _type;
+    this.toString = function () {
+        return "name: " + this.name + " type: " + this.type;
+    };
+};
+
 
 
 
