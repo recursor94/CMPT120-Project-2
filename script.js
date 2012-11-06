@@ -57,6 +57,27 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
 parse input. Made for testing purposes when big changes occur and the situation
 that I desire to be tested can not yet be obtained directly in the game
 environment. */
+
+//GAME OBJECTS DEFINED HERE
+
+var Player = function () {
+    /*The player object currently only has an inventory array.
+     * While this could just be represented by an array, it is better
+     * to wrap it inside a player object so that it will be easier
+     * to add new attributes to the player as the game evolves.
+     */
+    this.inventory = new Array();
+    this.inventory[1] = "Andrew";
+    this.inventory[2] = 18.5;
+    this.toString = function () {
+        return "Inventory Contents:" + this.inventory;
+    };
+};
+
+
+
+
+
 function init() {
     disableButton("south");
     disableButton("east");
