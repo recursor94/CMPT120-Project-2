@@ -5,6 +5,15 @@
 -->
 <script src="locations.js" type="text/javascript"></script>
 <script src="script.js" type="text/javascript"> </script>
+
+<script type="text/javascript">
+    //simple function to clear the textbox when the user
+    //focuses the cursor in the box.
+    function clearbox () {
+        var tbox = document.getElementById("input");
+        tbox.value = "";
+    }
+</script>
 <html>
   <!-- Andrew J. Spano
        September 2, 2012
@@ -74,19 +83,20 @@ north two spaces!
     </textarea>
     <br>
     <input type="text" value="Enter Command" id="input">
-    <input type="button" value="submit" onclick="parseInput();">
+    <input type="button" value="submit" onclick="parseInput();"
+           onfocus="clearbox();">
 
     <Input id="n" type="button" value="North" 
-	   onclick=but_north();>
+	   onclick="but_north();">
 
     <Input id="s" type="button" value="South" 
-           onclick=but_south();>
+           onclick="but_south();">
 
     <Input id="e" type="button" value="East" 
-           onclick=but_east();>
+           onclick="but_east();">
 
     <Input id="w" type="button" value="West" 
-           onclick=but_west();>
+           onclick="but_west();">
 
 
 
