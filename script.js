@@ -164,6 +164,10 @@ function updateText(msg) {
         textArea.value = textArea.value + "\n" + msg;
         textArea.scrollTop = textArea.scrollHeight;
     }
+    else if (msg === "ls") {
+        textArea.value = textArea.value + "\n" + playr;
+        textArea.scrollTop = textArea.scrollHeight;
+    }
     
     else {
         textArea.value = textArea.value + "\n\n" 
@@ -427,7 +431,7 @@ function parseInput() {
     else if (input === "ls" || input === "listin") {
         // The solution should be simple--playr tostring is called which displays
         //inventory contents
-        updateText(playr);
+        updateText("ls");
     }
     else {
         updateText("I don't understand that");
