@@ -73,8 +73,6 @@ var Takeable = function (_loc, _itom) {
       */
      this.inventorySize = 3;
      this.inventory = new Array();
-     this.inventory[0] = "Andrew";
-     this.inventory[1] = 18.5;
      this.toString = function () {
          return "Inventory Contents:" + this.inventory;
      };
@@ -89,7 +87,7 @@ var Takeable = function (_loc, _itom) {
      this.name = _name;
      this.type = _type;
      this.toString = function () {
-         return "name: " + this.name + " type: " + this.type;
+         return "Item: " + this.name + " type: " + this.type;
      };
  };
 
