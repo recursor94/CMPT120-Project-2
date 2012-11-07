@@ -34,7 +34,7 @@ var canNorth = true;
 var canSouth = false;
 var canEast = false;
 var canWest = false; //we start in a room south of the hall, so all we can move is north initially.
-var takeable = [];
+var takeables = [];
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + "These Commands move the player one unit in that direction\n"
@@ -54,7 +54,7 @@ that I desire to be tested can not yet be obtained directly in the game
 environment. */
 
 //GAME OBJECTS DEFINED HERE
-var takeable = function (_loc, _itom) {
+var Takeable = function (_loc, _itom) {
     this.loc = _loc;
     this.itom = _itom;
 };
@@ -74,8 +74,10 @@ var Player = function () {
 };
 
 var Item = function (_name, _type) {
-    //The item object shall be the super class of all in game items that can be
-    //taken with take.
+    /* The item object shall be the super class of all in game items that can be
+    * taken with take.
+    * an item has a string for name, and a string for type should be all that's
+    * necessary for now */
 
     this.name = _name;
     this.type = _type;
@@ -92,6 +94,7 @@ function init() {
     disableButton("south");
     disableButton("east");
     disableButton("west");
+    takeables[0] = new Takeable("kitchen", new Item("Cake", "food"));
     updateText(getLocation());
 }
 function admin_debug (com) {
@@ -103,9 +106,16 @@ function admin_debug (com) {
     }
         
 }
+
+
+//This function will handle the take command.
 function take() {
-    if(getLocation() === "suite") {
-        
+    for (it in takeable) {
+        if(getLocation() === takeable[it].loc) {
+            alert("equal location");
+        }
+            
+    
 }
 
 function updateText(msg) {
@@ -379,6 +389,9 @@ function parseInput() {
     }
     else if (input === "help") {
         updateText(validCommands);
+    }
+    else if (input === "take") {
+        take();
     }
     else {
         updateText("I don't understand that");
