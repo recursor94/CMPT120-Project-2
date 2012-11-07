@@ -45,7 +45,7 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + " West decrements x positon by one."
     + "\nShorthand commands n,s,w,e correspond to North, South"
     + " East and West respectively."
-    + " The 'take' command should preceed the name of a valid item in"
+    + " The 'take' command will remove the item at"
     + " the current location. the take command will remove the identified\n"
     + " object from the game world, and add it to the player's inventory.\n"
     + "listin and ls display the contents of the player inventory."
@@ -71,10 +71,9 @@ var Takeable = function (_loc, _itom) {
       * to wrap it inside a player object so that it will be easier
       * to add new attributes to the player as the game evolves.
       */
-     this.inventorySize = 3;
      this.inventory = new Array();
      this.toString = function () {
-         return "Inventory Contents:" + this.inventory;
+         return "\nInventory Contents: " + this.inventory;
      };
  };
 
@@ -129,6 +128,7 @@ var Takeable = function (_loc, _itom) {
 function take() {
     for (it in takeables) {
         if(getLocation() === takeables[it].loc) {
+            alert(playr.inventory.length);
             /*this might be a useful way to use javascripts loosely typed nature
              * the item property in each takeable object will either have an
              * item if the item was not taken yet, or a string indicating
@@ -138,9 +138,10 @@ function take() {
             if(takeables[it].itom !== null) {
                 //if you add at size index, a size will grow
                 //because last array index is equal to size-1
-                playr.inventory[playr.inventorySize] = takeables[it].itom;
-                playr.inventorySize = playr.inventorySize + 1;
+                playr.inventory[playr.inventory.length] = takeables[it].itom;
+                alert(playr.inventory.length);
                 takeables[it].itom = null;
+                
             }
         }
     }
@@ -206,6 +207,24 @@ function but_south() {
     updateText(message);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function but_east() {
     //test alert

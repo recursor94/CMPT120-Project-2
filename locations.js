@@ -153,5 +153,5 @@ function office() {
     disableButton("north");
     disableButton("west");
     disableButton("east");
-    return "office.";
+    return "office";
 }
