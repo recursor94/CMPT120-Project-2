@@ -16,6 +16,7 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
+var playr = new Player();
 var xpos = 0;
 var ypos = 0;
 var score = 5;
@@ -115,7 +116,18 @@ var Takeable = function (_loc, _itom) {
 function take() {
     for (it in takeables) {
         if(getLocation() === takeables[it].loc) {
-            alert("equal location");
+            /*this might be a useful way to use javascripts loosely typed nature
+             * the item property in each takeable object will either have an
+             * item if the item was not taken yet, or a string indicating
+             * that the item has already been taken by the player.
+             */
+            if(!takeables[it].itom === "removed") {
+                //if you add at size index, a size will grow
+                //because last array index is equal to size-1
+                playr.inventory[playr.inventorySize] = takeables[it].itom;
+                playr.inventorySize = playr.inventorySize + 1;
+                takeables[it].itom = "removed";
+            }
         }
     }
 }
