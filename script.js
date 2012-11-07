@@ -57,51 +57,54 @@ environment. */
 var Takeable = function (_loc, _itom) {
     this.loc = _loc;
     this.itom = _itom;
-};
-var Player = function () {
-    /*The player object currently only has an inventory array.
-     * While this could just be represented by an array, it is better
-     * to wrap it inside a player object so that it will be easier
-     * to add new attributes to the player as the game evolves.
-     */
-    this.inventorySize = 3;
-    this.inventory = new Array();
-    this.inventory[1] = "Andrew";
-    this.inventory[2] = 18.5;
     this.toString = function () {
-        return "Inventory Contents:" + this.inventory;
+        return "location:" + this.loc + "Item:" + this.itom;
     };
-};
+ };
+ var Player = function () {
+     /*The player object currently only has an inventory array.
+      * While this could just be represented by an array, it is better
+      * to wrap it inside a player object so that it will be easier
+      * to add new attributes to the player as the game evolves.
+      */
+     this.inventorySize = 3;
+     this.inventory = new Array();
+     this.inventory[1] = "Andrew";
+     this.inventory[2] = 18.5;
+     this.toString = function () {
+         return "Inventory Contents:" + this.inventory;
+     };
+ };
 
-var Item = function (_name, _type) {
-    /* The item object shall be the super class of all in game items that can be
-    * taken with take.
-    * an item has a string for name, and a string for type should be all that's
-    * necessary for now */
+ var Item = function (_name, _type) {
+     /* The item object shall be the super class of all in game items that can be
+     * taken with take.
+     * an item has a string for name, and a string for type should be all that's
+     * necessary for now */
 
-    this.name = _name;
-    this.type = _type;
-    this.toString = function () {
-        return "name: " + this.name + " type: " + this.type;
-    };
-};
-
-
+     this.name = _name;
+     this.type = _type;
+     this.toString = function () {
+         return "name: " + this.name + " type: " + this.type;
+     };
+ };
 
 
 
-function init() {
-    disableButton("south");
-    disableButton("east");
-    disableButton("west");
-    takeables[0] = new Takeable("kitchen", new Item("Cake", "food"));
-    updateText(getLocation());
-}
-function admin_debug (com) {
-    if (com === "setpos") {
-        xpos = prompt ("Enter a new player x position");
-        ypos = prompt ("Enter a new player y position");
-        alert ("(" + xpos + ", " + ypos);
+
+
+ function init() {
+     disableButton("south");
+     disableButton("east");
+     disableButton("west");
+     takeables[0] = new Takeable("kitchen", new Item("Cake", "food"));
+     updateText(getLocation());
+ }
+ function admin_debug (com) {
+     if (com === "setpos") {
+         xpos = prompt ("Enter a new player x position");
+         ypos = prompt ("Enter a new player y position");
+         alert ("(" + xpos + ", " + ypos);
         getLocation ();
     }
         
@@ -110,12 +113,11 @@ function admin_debug (com) {
 
 //This function will handle the take command.
 function take() {
-    for (it in takeable) {
-        if(getLocation() === takeable[it].loc) {
+    for (it in takeables) {
+        if(getLocation() === takeables[it].loc) {
             alert("equal location");
         }
-            
-    
+    }
 }
 
 function updateText(msg) {
