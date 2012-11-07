@@ -113,16 +113,6 @@ var Takeable = function (_loc, _itom) {
      takeables[9] = new Takeable("office", new Item("laptop","computer"));
      updateText(getLocation());
  }
- function admin_debug (com) {
-     if (com === "setpos") {
-         xpos = prompt ("Enter a new player x position");
-         ypos = prompt ("Enter a new player y position");
-         alert ("(" + xpos + ", " + ypos);
-        getLocation ();
-    }
-        
-}
-
 
 //This function will handle the take command.
 function take() {
@@ -207,23 +197,6 @@ function but_south() {
     updateText(message);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function but_east() {
