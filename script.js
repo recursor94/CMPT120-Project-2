@@ -98,7 +98,17 @@ var Takeable = function (_loc, _itom) {
      disableButton("south");
      disableButton("east");
      disableButton("west");
-     takeables[0] = new Takeable("kitchen", new Item("Cake", "food"));
+     //initialize items array
+     takeables[0] = new Takeable("suite", new Item ("complimentary water bottle", drink));
+     takeables[1] = new Takeable("kitchen", new Item("cake", "food"));
+     takeables[2] = new Takeable("presentation room", new Item("blue prints", "quest"));
+     takeables[3] = new Takeable("space bar", new Item("whiskey", "diuretic"));
+     takeables[4] = new Takeable("closet", new Item("Tomas Cruisor", "extraterresterial"));
+     takeables[5] = new Takeable("restroom", new Item("toilet paper", "cleaner"));
+     takeables[6] = new Takeable("armory", new Item("space laser gun", "weapon"));
+     takeables[7] = new Takeable("hospital room", new Item("med kit", "healer"));
+     takeables[8] = new Takeable("freight deck", new Item("steel shard", "weapon"));
+     takeables[9] = new Takeable("office", new Item("laptop","computer"));
      updateText(getLocation());
  }
  function admin_debug (com) {
@@ -120,13 +130,14 @@ function take() {
              * the item property in each takeable object will either have an
              * item if the item was not taken yet, or a string indicating
              * that the item has already been taken by the player.
+             * But I'll be safe and just use null for now until I ask Alan.
              */
-            if(!takeables[it].itom === "removed") {
+            if(takeables[it].itom !== null) {
                 //if you add at size index, a size will grow
                 //because last array index is equal to size-1
                 playr.inventory[playr.inventorySize] = takeables[it].itom;
                 playr.inventorySize = playr.inventorySize + 1;
-                takeables[it].itom = "removed";
+                takeables[it].itom = null;
             }
         }
     }
