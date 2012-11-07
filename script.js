@@ -16,7 +16,9 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
-var playr = new Player();
+var playr = null; //to be defined as player in init function. Seems broken otherwise
+//will not otherwise recognize that player prototype exists because prototype is
+//defined later.
 var xpos = 0;
 var ypos = 0;
 var score = 5;
@@ -46,7 +48,8 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + " The 'take' command should preceed the name of a valid item in"
     + " the current location. the take command will remove the identified\n"
     + " object from the game world, and add it to the player's inventory.\n"
-    + "The help command displays this text."
+    + "listin and ls display the contents of the player inventory."
+    + "The help command displays this text." 
     + " The input parser is case insensitive.";
 
 /*function that responds to input prompt if debug commands are detected in
@@ -70,8 +73,8 @@ var Takeable = function (_loc, _itom) {
       */
      this.inventorySize = 3;
      this.inventory = new Array();
-     this.inventory[1] = "Andrew";
-     this.inventory[2] = 18.5;
+     this.inventory[0] = "Andrew";
+     this.inventory[1] = 18.5;
      this.toString = function () {
          return "Inventory Contents:" + this.inventory;
      };
@@ -98,8 +101,10 @@ var Takeable = function (_loc, _itom) {
      disableButton("south");
      disableButton("east");
      disableButton("west");
+     //initialize player object
+     playr = new Player();
      //initialize items array
-     takeables[0] = new Takeable("suite", new Item ("complimentary water bottle", drink));
+     takeables[0] = new Takeable("suite", new Item ("complimentary water bottle", "drink"));
      takeables[1] = new Takeable("kitchen", new Item("cake", "food"));
      takeables[2] = new Takeable("presentation room", new Item("blue prints", "quest"));
      takeables[3] = new Takeable("space bar", new Item("whiskey", "diuretic"));
@@ -417,6 +422,12 @@ function parseInput() {
     }
     else if (input === "take") {
         take();
+    }
+    //for listing inventory
+    else if (input === "ls" || input === "listin") {
+        // The solution should be simple--playr tostring is called which displays
+        //inventory contents
+        updateText(playr);
     }
     else {
         updateText("I don't understand that");
