@@ -118,7 +118,6 @@ var Takeable = function (_loc, _itom) {
 function take() {
     for (it in takeables) {
         if(getLocation() === takeables[it].loc) {
-            alert(playr.inventory.length);
             /*this might be a useful way to use javascripts loosely typed nature
              * the item property in each takeable object will either have an
              * item if the item was not taken yet, or a string indicating
@@ -129,7 +128,6 @@ function take() {
                 //if you add at size index, a size will grow
                 //because last array index is equal to size-1
                 playr.inventory[playr.inventory.length] = takeables[it].itom;
-                alert(playr.inventory.length);
                 takeables[it].itom = null;
                 
             }
