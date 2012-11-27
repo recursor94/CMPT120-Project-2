@@ -15,7 +15,7 @@
  * 
  */
 
-var locat = function (_id, _name, _desc) {
+var locat = function (_id, _name, _desc, _itoms) {
 
     /* prototype for location object, will be used in a global array,
      * each will have an id that denotes it's navigation equivalent number
@@ -26,6 +26,8 @@ var locat = function (_id, _name, _desc) {
     this.id = _id;
     this.name = _name;
     this.desc = _desc;
+    this.hasVisited = false;
+    this.itoms = _itoms;
 };
 
 function corridor() {
