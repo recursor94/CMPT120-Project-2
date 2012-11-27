@@ -26,7 +26,7 @@ var locat = function (_id, _name, _desc) {
     this.id = _id;
     this.name = _name;
     this.desc = _desc;
-}
+};
 
 function corridor() {
     //temporary place holder for proof of success, will update later with
