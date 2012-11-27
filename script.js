@@ -91,28 +91,25 @@ var Takeable = function (_loc, _itom) {
  };
 
 
-
-
-
- function init() {
-     disableButton("south");
-     disableButton("east");
-     disableButton("west");
-     //initialize player object
-     playr = new Player();
-     //initialize items array
-     takeables[0] = new Takeable("suite", new Item ("complimentary water bottle", "drink"));
-     takeables[1] = new Takeable("kitchen", new Item("cake", "food"));
-     takeables[2] = new Takeable("presentation room", new Item("blue prints", "quest"));
-     takeables[3] = new Takeable("space bar", new Item("whiskey", "diuretic"));
-     takeables[4] = new Takeable("closet", new Item("Tomas Cruisor", "extraterresterial"));
-     takeables[5] = new Takeable("restroom", new Item("toilet paper", "cleaner"));
-     takeables[6] = new Takeable("armory", new Item("space laser gun", "weapon"));
-     takeables[7] = new Takeable("hospital room", new Item("med kit", "healer"));
-     takeables[8] = new Takeable("freight deck", new Item("steel shard", "weapon"));
-     takeables[9] = new Takeable("office", new Item("laptop","computer"));
-     updateText(getLocation());
- }
+function init() {
+    disableButton("south");
+    disableButton("east");
+    disableButton("west");
+    //initialize player object
+    playr = new Player();
+    //initialize items array
+    takeables[0] = new Takeable("suite", new Item ("complimentary water bottle", "drink"));
+    takeables[1] = new Takeable("kitchen", new Item("cake", "food"));
+    takeables[2] = new Takeable("presentation room", new Item("blue prints", "quest"));
+    takeables[3] = new Takeable("space bar", new Item("whiskey", "diuretic"));
+    takeables[4] = new Takeable("closet", new Item("Tomas Cruisor", "extraterresterial"));
+    takeables[5] = new Takeable("restroom", new Item("toilet paper", "cleaner"));
+    takeables[6] = new Takeable("armory", new Item("space laser gun", "weapon"));
+    takeables[7] = new Takeable("hospital room", new Item("med kit", "healer"));
+    takeables[8] = new Takeable("freight deck", new Item("steel shard", "weapon"));
+    takeables[9] = new Takeable("office", new Item("laptop","computer"));
+    updateText(getLocation());
+}
 
 //This function will handle the take command.
 function take() {
