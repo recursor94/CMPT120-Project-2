@@ -22,6 +22,7 @@ var playr = null; //to be defined as player in init function. Seems broken other
 var xpos = 0;
 var ypos = 0;
 var score = 5;
+var locats = []; // empty locations array to be instantiated in init function
 var visited_kitchen = false;
 var visited_presentation = false;
 var visited_corridor = false;
@@ -97,6 +98,11 @@ function init() {
     disableButton("west");
     //initialize player object
     playr = new Player();
+    //initialize locations and locations array
+
+
+
+    
     //initialize items array
     takeables[0] = new Takeable("suite", new Item ("complimentary water bottle", "drink"));
     takeables[1] = new Takeable("kitchen", new Item("cake", "food"));
