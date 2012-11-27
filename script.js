@@ -53,10 +53,6 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + "The help command displays this text." 
     + " The input parser is case insensitive.";
 
-/*function that responds to input prompt if debug commands are detected in
-parse input. Made for testing purposes when big changes occur and the situation
-that I desire to be tested can not yet be obtained directly in the game
-environment. */
 
 //GAME OBJECTS DEFINED HERE
 var Takeable = function (_loc, _itom) {
