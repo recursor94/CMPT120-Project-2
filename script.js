@@ -88,18 +88,25 @@ var Takeable = function (_loc, _itom) {
  };
 
 
+function initLocations () {
+    /* function for initializing each location
+     * and filling locats global array
+     */
+    var corridor = new locat (1, "corridor", "", null);
+    var suite = new locat (2, "suite", "It contains a complimentary water bottle!", []);
+    suite.itoms[0] = new Item("complimentary water bottle", "drink");
+    var kitchen = new locat (3, "kitchen", "You see a tasty cake!", []);
+    kitchen.itoms[0] = new Location("tasty cake", "food");
+}
+
 function init() {
     disableButton("south");
     disableButton("east");
     disableButton("west");
     //initialize player object
     playr = new Player();
-    //initialize locations and locations array
-
-
-
-    
     //initialize items array
+    initLocations();
     takeables[0] = new Takeable("suite", new Item ("complimentary water bottle", "drink"));
     takeables[1] = new Takeable("kitchen", new Item("cake", "food"));
     takeables[2] = new Takeable("presentation room", new Item("blue prints", "quest"));
