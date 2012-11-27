@@ -10,6 +10,24 @@
 //Most locations should have some item in here
 //perhaps in the future it would be useful to define
 //each location as an object with an item attribute.
+
+/* prototype for locations. Should be in a global array in scripts.js file
+ * 
+ */
+
+var locat = function (_id, _name, _desc) {
+
+    /* prototype for location object, will be used in a global array,
+     * each will have an id that denotes it's navigation equivalent number
+     * the name of the location, and a description that explains what items
+     * etc. are in the location
+     */
+    
+    this.id = _id;
+    this.name = _name;
+    this.desc = _desc;
+}
+
 function corridor() {
     //temporary place holder for proof of success, will update later with
     //location specific logic as in testLocation
