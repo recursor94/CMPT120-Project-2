@@ -157,7 +157,7 @@ function updateText(msg) {
 }
 function but_north() {
     if (canNorth === false) {
-	updateText ("predicament of not being able to move in this direction");
+	updateText ("You can not move in this direction!");
 	return;
     }
     ypos+=1;
