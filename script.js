@@ -96,6 +96,7 @@ function initLocations () {
      */
 
     var _corridor = new locat (0, "corridor", "");
+    locats[locats.length] = _corridor;
     
     var _suite = new locat (1, "suite", "It contains a complimentary water bottle!");
     _suite.itoms[0] = new Item("complimentary water bottle", "drink");

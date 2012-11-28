@@ -80,7 +80,7 @@ function kitchen() {
     disableButton("north");
     disableButton("east");
     disableButton("west");
-    return locats[1];
+    return locats[2];
 }
 
 function presentationRoom() {
