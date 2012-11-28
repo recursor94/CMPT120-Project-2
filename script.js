@@ -95,45 +95,45 @@ function initLocations () {
      * This seems dirty, any suggestions are welcome
      */
 
-    var _corridor = new locat (1, "corridor", "");
+    var _corridor = new locat (0, "corridor", "");
     
-    var _suite = new locat (2, "suite", "It contains a complimentary water bottle!");
+    var _suite = new locat (1, "suite", "It contains a complimentary water bottle!");
     _suite.itoms[0] = new Item("complimentary water bottle", "drink");
     locats[locats.length] = _suite;
     
-    var _kitchen = new locat (3, "kitchen", "You see a tasty cake!");
+    var _kitchen = new locat (2, "kitchen", "You see a tasty cake!");
     _kitchen.itoms[0] = new Item("tasty cake", "food");
     locats[locats.length] = _kitchen;
 
-    var _presentationRoom = new locat (4, "presentation Room", "You notice mysterious blue prints");
+    var _presentationRoom = new locat (3, "presentation Room", "You notice mysterious blue prints");
     _presentationRoom.itoms[0] = new Item ("mysterious blue prints", "quest It.");
     locats[locats.length] = _presentationRoom;
     
-    var _bar = new locat (5, "bar", "Somebody has left his unfinished space drink on the bar");
+    var _bar = new locat (4, "bar", "Somebody has left his unfinished space drink on the bar");
     _bar.itoms[0] = new Item ("space beer", "diuretic");
     locats[locats.length] = _bar;
 
-    var _closet = new locat (6, "supply closet", "There's a crowbar here");
+    var _closet = new locat (5, "supply closet", "There's a crowbar here");
     _closet.itoms[0] = new Item ("crowbar", "weapon");
     locats[locats.length] = _closet;
 
-    var _restroom = new locat (7, "restroom", "You see a roll of toilet paper");
+    var _restroom = new locat (6, "restroom", "You see a roll of toilet paper");
     _restroom.itoms[0] = new Item ("toilet paper", "cleaner");
     locats[locats.length] = _restroom;
 
-    var _armory = new locat (8, "armory", "Inside of a glass case, you see a laser gun!");
+    var _armory = new locat (7, "armory", "Inside of a glass case, you see a laser gun!");
     _armory.itoms[0] = new Item ("space laser gun", "weapon");
     locats[locats.length] = _armory;
 
-    var _hospitalRoom = new locat (9, "hospital room", "There is a medkit here");
+    var _hospitalRoom = new locat (8, "hospital room", "There is a medkit here");
     _hospitalRoom.itoms[0] = new Item ("medkit", "healer");
     locats[locats.length] = _hospitalRoom;
 
-    var _freightDeck = new locat (10, "Freight Deck", "There is a steel shard here");
+    var _freightDeck = new locat (9, "Freight Deck", "There is a steel shard here");
     _freightDeck.itoms[0] = new Item ("steel shard", "scrap");
     locats[locats.length] = _freightDeck;
 
-    var _office = new locat (11, "office", "On top of the desk, there is a laptop");
+    var _office = new locat (10, "office", "On top of the desk, there is a laptop");
     _office.itoms[0] = new Item ("laptop", "computer");
     locats[locats.length] = _office;
 
