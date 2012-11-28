@@ -116,7 +116,7 @@ function closet() {
 function restroom() {
     if(!locats[6].hasVisited) {
         score = score + 5;
-        visited_restroom = true;
+        locats[6].hasVisited = true;
     }
     disableButton("south");
     disableButton("east");
