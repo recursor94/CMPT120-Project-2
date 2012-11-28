@@ -44,8 +44,7 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
 
 //name same as id, and type serves as description
  var Item = function (_name, _type) {
-     /* The item object shall be the super class of all in game items that can be
-     * taken with take.
+         /* taken with take.
      * an item has a string for name, and a string for type should be all that's
      * necessary for now */
 
