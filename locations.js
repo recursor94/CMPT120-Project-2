@@ -37,8 +37,6 @@ var locat = function (_id, _name, _desc) {
 };
 
 function corridor() {
-    //temporary place holder for proof of success, will update later with
-    //location specific logic as in testLocation
     if(!locats[0].hasVisited) {
         score = score + 5;
         locats[0].hasVisited = true;
@@ -48,12 +46,7 @@ function corridor() {
 }
 
 function boundary() {
-    /*Should be default switch case; this is the case for boundaries.
-     * will likely test for right bound or left bound and take the appropriate
-     * button disabling action. In the interest of concision and clarity,
-     * it is probably best to put all boundary code in one function.
-     */
-
+    //basic button disabling for right or left boundary in corridor
     if(xpos < 0) {
         disableButton("north");
         disableButton("south");
@@ -69,7 +62,7 @@ function boundary() {
 
 function suite () {
  //Doesn't need a conditional or boolean flag because it will never
- //be a new location the score just starts at five.
+ //be a new location the score starts at five.
     disableButton("south");
     disableButton("east");
     disableButton("west");
@@ -131,13 +124,8 @@ function restroom() {
     return locats[6];
 }
 
-/*The proceeding functions are for the three new locations, they
-*will follow the same format as the other locations so far,
-*one above and bellow the corridor. Eg. (xpos,0), (xpos,2)*/
-
 function armory() {
     //The player will find his first weapon--the space laser gun here
-
     if(!locats[7].hasVisited) {
         score = score + 5;
         locats[7].hasVisited = true;
