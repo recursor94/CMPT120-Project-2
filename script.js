@@ -16,9 +16,7 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
-var playr = null; //to be defined as player in init function. Seems broken otherwise
-//will not otherwise recognize that player prototype exists because prototype is
-//defined later.
+
 var xpos = 0;
 var ypos = 0;
 var score = 5;
