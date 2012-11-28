@@ -137,9 +137,7 @@ function initLocations () {
     _office.itoms[0] = new Item ("laptop", "computer");
     locats[locats.length] = _office;
 
-    alert(locats);
-    
-}
+ }
 
 function init() {
     disableButton("south");
