@@ -35,12 +35,12 @@ var locat = function (_id, _name, _desc) {
 function corridor() {
     //temporary place holder for proof of success, will update later with
     //location specific logic as in testLocation
-    if(!visited_corridor) {
+    if(!locats[0].hasVisited) {
         score = score + 5;
-        visited_corridor = true;
+        locats[0].hasVisited = true;
     }
     enableAllButtons();
-    return "corridor";
+    return locats[0];
 }
 
 function boundary() {
@@ -69,62 +69,62 @@ function suite () {
     disableButton("south");
     disableButton("east");
     disableButton("west");
-    return "suite";
+    return locats[1];
 }
 
 function kitchen() {
-    if(!visited_kitchen) {
+    if(!locats[2].hasVisited) {
         score = score + 5;
-        visited_kitchen = true;
+        locats[2].hasVisited = true;
     }
     disableButton("north");
     disableButton("east");
     disableButton("west");
-    return "kitchen";
+    return locats[1];
 }
 
 function presentationRoom() {
-    if(!visited_presentation) {
+    if(!locats[3].hasVisited) {
         score = score + 5;
-        visited_presentation = true;
+        locats[3].hasVisited = true;
     }
     disableButton("north");
     disableButton("east");
     disableButton("west");
-    return "presentation room";
+    return locats[3];
 }
 
 function bar(){
-    if(!visited_bar) {
+    if(!locats[4].hasVisited) {
         score = score + 5;
-        visited_bar = true;
+        locats[4].hasVisited = true;
     }
     disableButton("south");
     disableButton("east");
     disableButton("west");
-    return "space bar";
+    return locats[4];
 }
 
 function closet() {
-    if(!visited_closet) {
+    if(!locats[5].hasVisited) {
         score = score + 5;
-        visited_closet = true;
+        locats[5].hasVisited = true;
     }
     disableButton("north");
     disableButton("east");
     disableButton("west");
-    return "closet";
+    return locats[5];
 }
 
 function restroom() {
-    if(!visited_restroom) {
+    if(!locats[6].hasVisited) {
         score = score + 5;
         visited_restroom = true;
     }
     disableButton("south");
     disableButton("east");
     disableButton("west");
-    return "restroom";
+    return locats[6];
 }
 
 /*The proceeding functions are for the three new locations, they
@@ -134,46 +134,46 @@ function restroom() {
 function armory() {
     //The player will find his first weapon--the space laser gun here
 
-    if(!visited_armory) {
+    if(!locats[7].hasVisited) {
         score = score + 5;
-        visited_armory = true;
+        locats[7].hasVisited = true;
     }
     disableButton("south");
     disableButton("east");
     disableButton("west");
-    return "armory";
+    return locats[7];
 }
 
 function hospitalRoom() {
-    if(!visited_hospitalRoom) {
+    if(!locats[8].hasVisited) {
         score = score + 5;
-        visited_hospitalRoom = true;
+        locats[8].hasVisited = true;
     }
     disableButton("north");
     disableButton("east");
     disableButton("west");
-    return "hospital room";
+    return locats[8];
 }
 
 function freightDeck() {
-    if(!visited_freightDeck) {
+    if(!locats[9].hasVisited) {
         score = score + 5;
-        visited_freightDeck = true;
+        locats[9].hasVisited = true;
     }
     disableButton("south");
     disableButton("east");
     disableButton("west");
-    return "freight deck";
+    return locats[9];
     //Note:possibility of a discarded empty freight container location?
 }
 
 function office() {
-    if(!visited_office) {
+    if(!locats[10].hasVisited) {
         score = score + 5;
-        visited_office = true;
+        locats[10].hasVisited = true;
     }
     disableButton("north");
     disableButton("west");
     disableButton("east");
-    return "office";
+    return locats[10];
 }
