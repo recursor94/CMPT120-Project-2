@@ -164,7 +164,7 @@ function updateText(msg) {
     else {
         textArea.value = textArea.value + "\n\n" 
             + "You are now in the " + msg + "\nScore: " + score
-	    + " current coordinates: " + testcoords();
+	    + " current coordinates: " + currentCoords();
         //    alert("You made it here fine.");
         //This is the scrolling adjustment line:
         textArea.scrollTop = textArea.scrollHeight;
@@ -181,7 +181,7 @@ function but_north() {
     ypos+=1;
     var message = getLocation();
     //test message:state current coords.
-    //alert(testcoords());
+    //alert(currentCoords());
     updateText(message);
 
 }
@@ -196,7 +196,7 @@ function but_south() {
     ypos+=-1;
     var message = getLocation();
     //test message:state current coords.
-    //alert(testcoords());
+    //alert(currentCoords());
     updateText(message);
 
 }
@@ -212,7 +212,7 @@ function but_east() {
     xpos+=1;
     var message = getLocation();
     //test message:state current coords.
-    //alert(testcoords());
+    //alert(currentCoords());
     updateText(message);
 
 }
@@ -227,12 +227,12 @@ function but_west() {
     xpos-=1;
     var message = getLocation();
     //test message:state current coords.
-    //alert(testcoords());
+    //alert(currentCoords());
     updateText(message);
 
 }
 
-function testcoords () {
+function currentCoords () {
     return "(" + xpos + ", " + ypos + ")";
 }
 
