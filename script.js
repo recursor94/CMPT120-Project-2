@@ -23,16 +23,6 @@ var xpos = 0;
 var ypos = 0;
 var score = 5;
 var locats = []; // empty locations array to be instantiated in init function
-var visited_kitchen = false;
-var visited_presentation = false;
-var visited_corridor = false;
-var visited_bar = false;
-var visited_closet = false;
-var visited_restroom = false;
-var visited_armory = false;
-var visited_hospitalRoom = false;
-var visited_freightDeck = false;
-var visited_office = false;
 //vars for testing if you can move or not. Used in direction functions.
 var canNorth = true;
 var canSouth = false;
@@ -61,17 +51,6 @@ var Takeable = function (_loc, _itom) {
     this.toString = function () {
         return "location:" + this.loc + "Item:" + this.itom;
     };
- };
- var Player = function () {
-     /*The player object currently only has an inventory array.
-      * While this could just be represented by an array, it is better
-      * to wrap it inside a player object so that it will be easier
-      * to add new attributes to the player as the game evolves.
-      */
-     this.inventory = new Array();
-     this.toString = function () {
-         return "\nInventory Contents: " + this.inventory;
-     };
  };
 
  var Item = function (_name, _type) {
