@@ -133,7 +133,7 @@ function take () {
     }
     getLocation().clearDescription();
     //now update the text area to show updated description
-    updateText(getLocation());
+    updateText("You have collected all of the items in this location");
 }
 
 function updateText(msg) {
@@ -143,23 +143,17 @@ function updateText(msg) {
         textArea.value = textArea.value + "\n" + msg + validCommands;
         textArea.scrollTop = textArea.scrollHeight;
     }
-    //have to make sure that if the player enters help, he doesn't get the
-    //"you are now in the" message.
-    else if(msg === validCommands) {
-        textArea.value = textArea.value + "\n" + msg;
-        textArea.scrollTop = textArea.scrollHeight;
-    }
-    else if (msg === "ls") {
-        textArea.value = textArea.value + "\n" + playr;
-        textArea.scrollTop = textArea.scrollHeight;
-    }
-    
-    else {
+    else if (msg === getLocation()) {
         textArea.value = textArea.value + "\n\n" 
             + "You are now in the " + msg + "\nScore: " + score
 	    + " current coordinates: " + currentCoords();
         //    alert("You made it here fine.");
         //This is the scrolling adjustment line:
+        textArea.scrollTop = textArea.scrollHeight;
+    }
+
+    else {
+        textArea.value = textArea.value + "\n\n" + msg;
         textArea.scrollTop = textArea.scrollHeight;
     }
 }
@@ -306,7 +300,7 @@ function parseInput() {
     }
     //for listing inventory
     else if (input === "ls" || input === "listin") {
-        updateText("ls");
+        updateText(inventory);
     }
     else {
         updateText("I don't understand that");
