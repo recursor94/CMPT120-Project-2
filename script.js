@@ -125,6 +125,10 @@ function take () {
      * or perform operations on that array element directly!
      */
     var locItems = getLocation().items;
+    //lets avoid any problems with locations without any items. Though this seems sloppy
+    if(locItems.length === 0) {
+        return;
+    }
     
     for (var i in locItems) {
         inventory[inventory.length] = locItems[i];
