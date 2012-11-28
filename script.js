@@ -22,6 +22,7 @@ var ypos = 0;
 var score = 5;
 var locats = []; // empty locations array to be instantiated in init function
 //vars for testing if you can move or not. Used in direction functions.
+var inventory = []; // array representing items taken by player
 var canNorth = true;
 var canSouth = false;
 var canEast = false;
@@ -68,43 +69,43 @@ function initLocations () {
     locats[locats.length] = _corridor;
     
     var _suite = new locat (1, "suite", "It contains a complimentary water bottle!");
-    _suite.itoms[0] = new Item("complimentary water bottle", "drink");
+    _suite.items[0] = new Item("complimentary water bottle", "drink");
     locats[locats.length] = _suite;
     
     var _kitchen = new locat (2, "kitchen", "You see a tasty cake!");
-    _kitchen.itoms[0] = new Item("tasty cake", "food");
+    _kitchen.items[0] = new Item("tasty cake", "food");
     locats[locats.length] = _kitchen;
 
     var _presentationRoom = new locat (3, "presentation Room", "You notice mysterious blue prints");
-    _presentationRoom.itoms[0] = new Item ("mysterious blue prints", "quest It.");
+    _presentationRoom.items[0] = new Item ("mysterious blue prints", "quest It.");
     locats[locats.length] = _presentationRoom;
     
     var _bar = new locat (4, "bar", "Somebody has left his unfinished space drink on the bar");
-    _bar.itoms[0] = new Item ("space beer", "diuretic");
+    _bar.items[0] = new Item ("space beer", "diuretic");
     locats[locats.length] = _bar;
 
     var _closet = new locat (5, "supply closet", "There's a crowbar here");
-    _closet.itoms[0] = new Item ("crowbar", "weapon");
+    _closet.items[0] = new Item ("crowbar", "weapon");
     locats[locats.length] = _closet;
 
     var _restroom = new locat (6, "restroom", "You see a roll of toilet paper");
-    _restroom.itoms[0] = new Item ("toilet paper", "cleaner");
+    _restroom.items[0] = new Item ("toilet paper", "cleaner");
     locats[locats.length] = _restroom;
 
     var _armory = new locat (7, "armory", "Inside of a glass case, you see a laser gun!");
-    _armory.itoms[0] = new Item ("space laser gun", "weapon");
+    _armory.items[0] = new Item ("space laser gun", "weapon");
     locats[locats.length] = _armory;
 
     var _hospitalRoom = new locat (8, "hospital room", "There is a medkit here");
-    _hospitalRoom.itoms[0] = new Item ("medkit", "healer");
+    _hospitalRoom.items[0] = new Item ("medkit", "healer");
     locats[locats.length] = _hospitalRoom;
 
     var _freightDeck = new locat (9, "Freight Deck", "There is a steel shard here");
-    _freightDeck.itoms[0] = new Item ("steel shard", "scrap");
+    _freightDeck.items[0] = new Item ("steel shard", "scrap");
     locats[locats.length] = _freightDeck;
 
     var _office = new locat (10, "office", "On top of the desk, there is a laptop");
-    _office.itoms[0] = new Item ("laptop", "computer");
+    _office.items[0] = new Item ("laptop", "computer");
     locats[locats.length] = _office;
 
  }
