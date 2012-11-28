@@ -28,7 +28,7 @@ var locat = function (_id, _name, _desc) {
     this.itoms = [];
 
     this.toString = function () {
-        return name + "\n" + desc;
+        return this.name + "\n" + this.desc;
     };
 };
 
