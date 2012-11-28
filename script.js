@@ -138,9 +138,6 @@ function take () {
 
 function updateText(msg) {
     var textArea = document.getElementById("gametext");
-    //    alert("function has been called.");
-    //    alert(textArea).value;
-
     //necessary test for not understood text.
     if(msg === "I don't understand that") {
         textArea.value = textArea.value + "\n" + msg + validCommands;
@@ -167,48 +164,35 @@ function updateText(msg) {
     }
 }
 function but_north() {
-    //test alert
-    //    alert("but north function entered");
-
     if (canNorth === false) {
 	updateText ("predicament of not being able to move in this direction");
 	return;
     }
     ypos+=1;
     var message = getLocation();
-    //test message:state current coords.
-    //alert(currentCoords());
     updateText(message);
 
 }
 
 function but_south() {
-    //test alert
-    //alert("but south function entered");
     if (canSouth === false) {
 	updateText("predicament of not being able to move in this direction");
 	return;
     }
     ypos+=-1;
     var message = getLocation();
-    //test message:state current coords.
-    //alert(currentCoords());
     updateText(message);
 
 }
 
 
 function but_east() {
-    //test alert
-    // alert("but east function entered");
     if (canEast === false) {
 	updateText ("predicament of not being able to move in this direction");
 	return;
     }
     xpos+=1;
     var message = getLocation();
-    //test message:state current coords.
-    //alert(currentCoords());
     updateText(message);
 
 }
@@ -298,7 +282,6 @@ function getLocation() {
 
 function parseInput() {
     var textfield = document.getElementById("input");
-    //    alert(textfield);
     var input = textfield.value;
     textfield.value = "";
     input = input.toLowerCase(); //important to make conditionals easier and just test for word input rather than having to worry about case.
@@ -323,8 +306,6 @@ function parseInput() {
     }
     //for listing inventory
     else if (input === "ls" || input === "listin") {
-        // The solution should be simple--playr tostring is called which displays
-        //inventory contents
         updateText("ls");
     }
     else {
