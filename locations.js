@@ -26,6 +26,10 @@ var locat = function (_id, _name, _desc) {
     this.desc = _desc;
     this.hasVisited = false;
     this.itoms = [];
+
+    this.toString = function () {
+        return name + "\n" + desc;
+    };
 };
 
 function corridor() {
