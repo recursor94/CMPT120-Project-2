@@ -6,28 +6,26 @@
  * his score is incremented by 5. But if a player has visited a location already
  * his score must not be changed when he visits it again.*/
 
-//score is a global variable declared in scripts.js that represents the players score.
-//Most locations should have some item in here
-//perhaps in the future it would be useful to define
-//each location as an object with an item attribute.
+/* score is a global variable declared in scripts.js that represents the players  score.
+ * Most locations should have some item in here
+ * perhaps in the future it would be useful to define
+ * each location as an object with an item attribute.
+*/
 
-/* prototype for locations. Should be in a global array in scripts.js file
- * 
- */
-
-var locat = function (_id, _name, _desc, _itoms) {
+var locat = function (_id, _name, _desc) {
 
     /* prototype for location object, will be used in a global array,
      * each will have an id that denotes it's navigation equivalent number
      * the name of the location, and a description that explains what items
-     * etc. are in the location
+     * etc. are in the location.
+     * The global locations array is in script.js. instantiated by init function
      */
     
     this.id = _id;
     this.name = _name;
     this.desc = _desc;
     this.hasVisited = false;
-    this.itoms = _itoms;
+    this.itoms = [];
 };
 
 function corridor() {
