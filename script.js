@@ -42,8 +42,7 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + " The input parser is case insensitive.";
 
 
-//GAME OBJECTS DEFINED HERE
-
+//name same as id, and type serves as description
  var Item = function (_name, _type) {
      /* The item object shall be the super class of all in game items that can be
      * taken with take.
@@ -298,8 +297,13 @@ function parseInput() {
         take();
     }
     //for listing inventory
-    else if (input === "ls" || input === "listin") {
-        updateText(inventory);
+    else if (input === "ls" || input === "listin" || input === "inventory") {
+        if (inventory.length === 0) {
+            updateText("Your inventory is empty");
+        }
+        else {
+            updateText(inventory);
+        }
     }
     else {
         updateText("I don't understand that");
