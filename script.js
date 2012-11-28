@@ -121,7 +121,19 @@ function init() {
 
 //This function will handle the take command.
 function take () {
+    /* getLocation calls function for the players current location.
+     * because each location function returns the corresponding element
+     * of the locats array, I can use this in updateText, which calls the tostring
+     * or perform operations on that array element directly!
+     */
+    var locItems = getLocation().items;
     
+    for (var i in locItems) {
+        inventory[inventory.length] = locItems[i];
+    }
+    getLocation().clearDescription();
+    //now update the text area to show updated description
+    updateText(getLocation());
 }
 
 function updateText(msg) {
@@ -230,9 +242,6 @@ function getLocation() {
         /*This seems like a sloppy solution, which is a shame, because I thought
          * that the default switch case was a perfect solution.
          */
-        //JUST LEARNED SOMETHING COOL--IF YOU UPDATE A TEXTAREA
-        //WITHOUT ITS PARENTHESIS, THE BODY OF THE FUNCTION WILL APPEAR
-        //INSTEAD OF THE RESULT OF THE FUNCTION
         else {
             return boundary();
         }
