@@ -120,24 +120,8 @@ function init() {
 }
 
 //This function will handle the take command.
-function take() {
-    for (it in takeables) {
-        if(getLocation() === takeables[it].loc) {
-            /*this might be a useful way to use javascripts loosely typed nature
-             * the item property in each takeable object will either have an
-             * item if the item was not taken yet, or a string indicating
-             * that the item has already been taken by the player.
-             * But I'll be safe and just use null for now until I ask Alan.
-             */
-            if(takeables[it].itom !== null) {
-                //if you add at size index, a size will grow
-                //because last array index is equal to size-1
-                playr.inventory[playr.inventory.length] = takeables[it].itom;
-                takeables[it].itom = null;
-                
-            }
-        }
-    }
+function take () {
+    
 }
 
 function updateText(msg) {
@@ -218,16 +202,12 @@ function but_east() {
 }
 
 function but_west() {
-    //test alert
-    //alert("but west function entered");
     if (canWest === false) {
 	updateText("predicament of not being able to move in this direction");
 	return;
     }
     xpos-=1;
     var message = getLocation();
-    //test message:state current coords.
-    //alert(currentCoords());
     updateText(message);
 
 }
@@ -237,12 +217,11 @@ function currentCoords () {
 }
 
 function getLocation() {
-    //    alert ("getLocation ()");
-    //  alert("ypos:" + ypos);
-    //Switch statements
-    //using y position as a test variable because it is easier
-    //to put corridor possibility in one case, since y position of 1 is always
-    //the corridor.
+    /* Switch statements
+     * using y position as a test variable because it is easier
+     * to put corridor possibility in one case, since y position of 1 is always
+     * the corridor. */
+
     switch (ypos) {
     case 1:
         if(xpos >= 0 && xpos <= 4) {
@@ -313,11 +292,8 @@ function parseInput() {
     //    alert(textfield);
     var input = textfield.value;
     textfield.value = "";
-    //    alert(input);
     input = input.toLowerCase(); //important to make conditionals easier and just test for word input rather than having to worry about case.
-    //    alert(input);
-    //this will simply go through doing nothing if it is not a
-    //debug command, so why not do it?
+
     if(input === "n" || input === "north") {
         but_north();
     }
