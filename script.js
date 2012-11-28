@@ -147,11 +147,10 @@ function updateText(msg) {
         textArea.value = textArea.value + "\n\n" 
             + "You are now in the " + msg + "\nScore: " + score
 	    + " current coordinates: " + currentCoords();
-        //    alert("You made it here fine.");
         //This is the scrolling adjustment line:
         textArea.scrollTop = textArea.scrollHeight;
     }
-
+    //in case I want to update the text to say anything else
     else {
         textArea.value = textArea.value + "\n\n" + msg;
         textArea.scrollTop = textArea.scrollHeight;
@@ -170,7 +169,7 @@ function but_north() {
 
 function but_south() {
     if (canSouth === false) {
-	updateText("predicament of not being able to move in this direction");
+	updateText("You can not move in this direction!");
 	return;
     }
     ypos+=-1;
@@ -182,7 +181,7 @@ function but_south() {
 
 function but_east() {
     if (canEast === false) {
-	updateText ("predicament of not being able to move in this direction");
+	updateText ("You can not move in this direction!");
 	return;
     }
     xpos+=1;
@@ -193,7 +192,7 @@ function but_east() {
 
 function but_west() {
     if (canWest === false) {
-	updateText("predicament of not being able to move in this direction");
+	updateText("You can not move in this direction!");
 	return;
     }
     xpos-=1;
