@@ -25,14 +25,14 @@ var locat = function (_id, _name, _desc) {
     this.name = _name;
     this.desc = _desc;
     this.hasVisited = false;
-    this.itoms = [];
+    this.items = [];
 
     this.toString = function () {
         return this.name + "\n" + this.desc;
     };
     //to be called when all of the items in a location have been taken
     this.clearDescription = function () {
-        this.desc = "You have collected all of the items in this location."
+        this.desc = "You have collected all of the items in this location.";
     };
 };
 
@@ -44,7 +44,7 @@ function corridor() {
         locats[0].hasVisited = true;
     }
     enableAllButtons();
-    return locats[0];
+    return locats[0]; //useful for toStrings, and for player location!
 }
 
 function boundary() {
