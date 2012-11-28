@@ -89,14 +89,44 @@ var Takeable = function (_loc, _itom) {
 
 
 function initLocations () {
+
     /* function for initializing each location
      * and filling locats global array
+     * This seems dirty, any suggestions are welcome
      */
-    var corridor = new locat (1, "corridor", "", null);
-    var suite = new locat (2, "suite", "It contains a complimentary water bottle!", []);
-    suite.itoms[0] = new Item("complimentary water bottle", "drink");
-    var kitchen = new locat (3, "kitchen", "You see a tasty cake!", []);
-    kitchen.itoms[0] = new Location("tasty cake", "food");
+
+    var _corridor = new locat (1, "corridor", "");
+    
+    var _suite = new locat (2, "suite", "It contains a complimentary water bottle!");
+    _suite.itoms[0] = new Item("complimentary water bottle", "drink");
+    
+    var _kitchen = new locat (3, "kitchen", "You see a tasty cake!");
+    _kitchen.itoms[0] = new Item("tasty cake", "food");
+
+    var _presentationRoom = new locat (4, "presentation Room", "You notice mysterious blue prints");
+    _presentationRoom.itoms[0] = new Item ("mysterious blue prints", "quest It.");
+    
+    var _bar = new locat (5, "bar", "Somebody has left his unfinished space drink on the bar");
+    _bar.itoms[0] = new Item ("space beer", "diuretic");
+
+    var _closet = new locat (6, "supply closet", "There's a crowbar here");
+    _closet.itoms[0] = new Item ("crowbar", "weapon");
+
+    var _restroom = new locat (7, "restroom", "You see a roll of toilet paper");
+    _restroom.itoms[0] = new Item ("toilet paper", "cleaner");
+
+    var _armory = new locat (8, "armory", "Inside of a glass case, you see a laser gun!");
+    _armory.itoms[0] = new Item ("space laser gun", "weapon");
+
+    var _hospitalRoom = new locat (9, "hospital room", "There is a medkit here");
+    _hospitalRoom.itoms[0] = new Item ("medkit", "healer");
+
+    var _freightDeck = new locat (10, "Freight Deck", "There is a steel shard here");
+    _freightDeck.itoms[0] = new Item ("steel shard", "scrap");
+
+    var _office = new locat (11, "office", "On top of the desk, there is a laptop");
+    _office.itoms[0] = new Item ("laptop", "computer");
+    
 }
 
 function init() {
