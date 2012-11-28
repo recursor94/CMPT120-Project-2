@@ -28,7 +28,6 @@ var canNorth = true;
 var canSouth = false;
 var canEast = false;
 var canWest = false; //we start in a room south of the hall, so all we can move is north initially.
-var takeables = [];
 //important var which will appear whenever the user inputs an invalid command.
 var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + "These Commands move the player one unit in that direction\n"
