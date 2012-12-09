@@ -41,6 +41,7 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + "The help command displays this text." 
     + " The input parser is case insensitive.";
 var puzzleCompleted = false;
+var currentLocation = "suite"; // will be changed after every location change
 
 //name same as id, and type serves as description
  var Item = function (_name, _type) {
@@ -58,7 +59,7 @@ var puzzleCompleted = false;
 //function for testing if the player posses and item
 function playerHasItem(item) {
     for(i in inventory) {
-        if (inventory[i] === item) {
+        if (inventory[i].name === item) {
             return true;
         }
     }
@@ -124,7 +125,7 @@ function init() {
     disableButton("west");
     //initialize items array
     initLocations();
-    updateText(getLocation());
+    updateText(currentLocation);
 }
 
 //This function will handle the take command.
@@ -155,7 +156,7 @@ function updateText(msg) {
         textArea.value = textArea.value + "\n" + msg + validCommands;
         textArea.scrollTop = textArea.scrollHeight;
     }
-    else if (msg === getLocation()) {
+    else if (msg === currentLocation) {
         textArea.value = textArea.value + "\n\n" 
             + "You are now in the " + msg + "\nScore: " + score
 	    + " current coordinates: " + currentCoords();
@@ -174,8 +175,8 @@ function but_north() {
 	return;
     }
     ypos+=1;
-    var message = getLocation();
-    updateText(message);
+    currentLocation = getLocation();
+    updateText(currentLocation);
 
 }
 
@@ -185,8 +186,8 @@ function but_south() {
 	return;
     }
     ypos+=-1;
-    var message = getLocation();
-    updateText(message);
+    currentLocation = getLocation();
+    updateText(currentLocation);
 
 }
 
@@ -197,8 +198,8 @@ function but_east() {
 	return;
     }
     xpos+=1;
-    var message = getLocation();
-    updateText(message);
+    currentLocation = getLocation();
+    updateText(currentLocation);
 
 }
 
@@ -208,8 +209,8 @@ function but_west() {
 	return;
     }
     xpos-=1;
-    var message = getLocation();
-    updateText(message);
+    currentLocation = getLocation();
+    updateText(currentLocation);
 
 }
 
@@ -308,6 +309,9 @@ function parseInput() {
     }
     else if (input === "take") {
         take();
+    }
+    else if (input === "decode blue prints" && currentLocation === "office") {
+        decodeBluePrints();
     }
     //for listing inventory
     else if (input === "ls" || input === "listin" || input === "inventory") {

@@ -164,6 +164,7 @@ function office() {
         score = score + 5;
         locats[10].hasVisited = true;
     }
+    officePuzzleTest();
     disableButton("north");
     disableButton("west");
     disableButton("east");
