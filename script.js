@@ -55,6 +55,16 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
      };
  };
 
+//function for testing if the player posses and item
+function playerHasItem(item) {
+    for(i in inventory) {
+        if (inventory[i] === item) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 function initLocations () {
 
