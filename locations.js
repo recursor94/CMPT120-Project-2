@@ -152,6 +152,15 @@ function freightDeck() {
         score = score + 5;
         locats[9].hasVisited = true;
     }
+    if(puzzleCompleted) {
+        updateText("You succesfully find the one remaining escape pod,"
+                   + "punch in the code, and fly away to the safety of"
+                   + " your home planet.");
+        updateText("YOU WON!!!!!");
+        endGame();
+        return "escape pod! Refresh to start over.";
+    }
+    
     disableButton("south");
     disableButton("east");
     disableButton("west");

@@ -85,7 +85,7 @@ function initLocations () {
     _kitchen.items[0] = new Item("tasty cake", "food");
     locats[locats.length] = _kitchen;
 
-    var _presentationRoom = new locat (3, "presentation Room", "You notice mysterious blue prints");
+    var _presentationRoom = new locat (3, "presentation Room", "You notice mysterious blue prints They seem...Important...very important.");
     _presentationRoom.items[0] = new Item ("mysterious blue prints", "quest It.");
     locats[locats.length] = _presentationRoom;
     
@@ -125,6 +125,7 @@ function init() {
     disableButton("west");
     //initialize items array
     initLocations();
+    currentLocation = getLocation();
     updateText(currentLocation);
 }
 
@@ -310,8 +311,12 @@ function parseInput() {
     else if (input === "take") {
         take();
     }
-    else if (input === "decode blue prints" && currentLocation === "office") {
-        decodeBluePrints();
+    //Conditional to handle decode command which should not work
+    //unless the player has the blue prints and has not completed the puzzle
+    else if (input === "decode blue prints" && currentLocation === locats[10] && !puzzleCompleted) {
+        if(playerHasItem("mysterious blue prints")) {
+            decodeBluePrints();
+        }
     }
     //for listing inventory
     else if (input === "ls" || input === "listin" || input === "inventory") {
