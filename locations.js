@@ -156,7 +156,7 @@ function freightDeck() {
     disableButton("east");
     disableButton("west");
     return locats[9];
-    //Note:possibility of a discarded empty freight container location?
+
 }
 
 function office() {

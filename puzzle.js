@@ -6,3 +6,12 @@ function officePuzzleTest() {
         }
         
 }
+
+function decodeBluePrints () {
+    updateText("Blue Prints decoded, they yield the password to the"
+               + "escape pods! Head to the freight deck, where "
+               + "there are still remaining escape pods"
+               + "remaining.");
+
+    puzzleCompleted = true; //now enable flag to use the escape pods!
+}
