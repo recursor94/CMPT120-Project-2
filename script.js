@@ -40,7 +40,7 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + "listin and ls display the contents of the player inventory."
     + "The help command displays this text." 
     + " The input parser is case insensitive.";
-
+var puzzleCompleted = false;
 
 //name same as id, and type serves as description
  var Item = function (_name, _type) {
