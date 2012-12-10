@@ -42,9 +42,17 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + " The input parser is case insensitive.";
 var puzzleCompleted = false;
 var currentLocation = "suite"; // will be changed after every location change
-var navControl = [ []
-]
+var navControl = [ [2, 0]
+                   [1, 0]
+                   [2,]
+                   
+];
 
+function move (direction) {
+    if (direction === "north") {
+
+        currentLocation = navControl[n+1]
+}
 
 //name same as id, and type serves as description
  var Item = function (_name, _type) {
@@ -127,7 +135,7 @@ function initLocations () {
  }
 
 function init() {
-    alert(nav);
+    alert(navControl[0][0]);
     disableButton("south");
     disableButton("east");
     disableButton("west");
@@ -228,69 +236,8 @@ function currentCoords () {
 }
 
 function getLocation() {
-    /* Switch statements
-     * using y position as a test variable because it is easier
-     * to put corridor possibility in one case, since y position of 1 is always
-     * the corridor. */
+    
 
-    switch (ypos) {
-    case 1:
-        if(xpos >= 0 && xpos <= 4) {
-            return corridor ();
-        }
-        /*This seems like a sloppy solution, which is a shame, because I thought
-         * that the default switch case was a perfect solution.
-         */
-        else {
-            return boundary();
-        }
-        break;
-        
-    case 0:
-        if(xpos === 0){
-            return suite();
-        }
-        else if (xpos === 1) {
-            return bar();
-        }
-        else if(xpos === 2){
-            return restroom();
-        }
-        else if(xpos === 3) {
-            return armory();
-        }
-        else if(xpos === 4) {
-            return freightDeck();
-        }
-        break;
-
-    case 2:
-        if(xpos === 0) {
-            return kitchen();
-        }
-        else if (xpos === 1) {
-            return presentationRoom();
-        }
-        else if(xpos === 2) {
-            return closet();
-            
-        }
-        else if(xpos === 3) {
-            return hospitalRoom();
-        }
-        else if(xpos === 4) {
-            return office();
-        }
-        break;
-        
-        
-//Well if it isn't the hallway or some unique location, then the player
-//is definitely at a boundary
-    default:
-        alert("if you are at a boundary, this should be executed.");
-        return boundary();
-        break;
-    }
 }
 
 
