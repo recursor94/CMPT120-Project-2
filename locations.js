@@ -114,7 +114,7 @@ function closet() {
         score = score + 5;
         locats[5].hasVisited = true;
     }
-    disableButton("north");
+    disableButton("south");
     disableButton("east");
     disableButton("west");
     return locats[5];
