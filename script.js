@@ -104,6 +104,7 @@ function initLocations () {
      */
 
     var _corridor = new locat (0, "corridor", "", corridor);
+    _corridor.items = null; //because there are no items in the corridor.
     locats[locats.length] = _corridor;
     
     var _suite = new locat (1, "suite", "It contains a complimentary water bottle!", suite);
@@ -174,7 +175,7 @@ function take () {
      * or perform operations on that array element directly!
      */
     var locItems = currentLocation.items;
-    //lets avoid any problems with locations without any items. Though this seems sloppy
+    //lets avoid any problems with locations without any items.
     if(locItems === null) {
         return;
     }
@@ -183,7 +184,7 @@ function take () {
         inventory[inventory.length] = locItems[i];
     }
     currentLocation.clearDescription();
-    //now update the text area to show updated description
+    //now update the text area to show that the items are no longer there
     updateText("You have collected all of the items in this location");
 }
 
