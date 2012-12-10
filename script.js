@@ -42,6 +42,9 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + " The input parser is case insensitive.";
 var puzzleCompleted = false;
 var currentLocation = "suite"; // will be changed after every location change
+var navControl = [ []
+]
+
 
 //name same as id, and type serves as description
  var Item = function (_name, _type) {
@@ -120,6 +123,7 @@ function initLocations () {
  }
 
 function init() {
+    alert(nav);
     disableButton("south");
     disableButton("east");
     disableButton("west");
