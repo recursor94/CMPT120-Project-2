@@ -255,8 +255,8 @@ function currentCoords () {
 }
 
 function getLocation() {
-    
-
+    var index = nav[row][col];
+    return locats[index];
 }
 
 
