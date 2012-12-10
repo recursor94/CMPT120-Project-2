@@ -125,7 +125,7 @@ function restroom() {
         score = score + 5;
         locats[6].hasVisited = true;
     }
-    disableButton("south");
+    disableButton("north");
     disableButton("east");
     disableButton("west");
     return locats[6];
