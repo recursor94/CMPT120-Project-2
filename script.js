@@ -55,10 +55,23 @@ var navControl = [ [1, 3, 5, 7, 9]
 ];
 
 function move (direction) {
-    if (direction === "north") {
 
-        currentLocation = navControl[n+1];
-}
+    switch(direction) {
+//according to material, non indented switch case is fine.
+        case "north":
+        row = row + 1;
+        break;
+        case "south":
+        row = row -1;
+        break;
+        case "east":
+        col = col + 1;
+        break;
+        case "west":
+        col = col -1;
+        break;
+        
+    }
 
 //name same as id, and type serves as description
  var Item = function (_name, _type) {
@@ -193,7 +206,7 @@ function updateText(msg) {
     }
 }
 function but_north() {
-    if (canNorth === false) {
+    if (!canNorth) {
 	updateText ("You can not move in this direction!");
 	return;
     }
@@ -204,7 +217,7 @@ function but_north() {
 }
 
 function but_south() {
-    if (canSouth === false) {
+    if (!canSouth) {
 	updateText("You can not move in this direction!");
 	return;
     }
@@ -216,7 +229,7 @@ function but_south() {
 
 
 function but_east() {
-    if (canEast === false) {
+    if (!canEast) {
 	updateText ("You can not move in this direction!");
 	return;
     }
@@ -227,7 +240,7 @@ function but_east() {
 }
 
 function but_west() {
-    if (canWest === false) {
+    if (!canWest) {
 	updateText("You can not move in this direction!");
 	return;
     }
