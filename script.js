@@ -176,18 +176,17 @@ function take () {
      * of the locats array, I can use this in updateText, which calls the tostring
      * or perform operations on that array element directly!
      */
-    var locItems = getLocation().items;
+    var locItems = currentLocation.items;
+    alert(locItems);
     //lets avoid any problems with locations without any items. Though this seems sloppy
-    if(!locItems.length > 0) {
+    if(locItems === null) {
         return;
     }
     
     for (var i in locItems) {
         inventory[inventory.length] = locItems[i];
     }
-    locItems = [];
-    alert(locItems);
-    getLocation().clearDescription();
+    currentLocation.clearDescription();
     //now update the text area to show updated description
     updateText("You have collected all of the items in this location");
 }

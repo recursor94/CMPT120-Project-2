@@ -34,7 +34,9 @@ var locat = function (_id, _name, _desc, _protocol) {
     //to be called when all of the items in a location have been taken
     this.clearDescription = function () {
         this.desc = "You have collected all of the items in this location.";
+        this.items = null;
     };
+    
 };
 
 function corridor() {
