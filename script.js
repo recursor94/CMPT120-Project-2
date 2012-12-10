@@ -174,7 +174,6 @@ function take () {
      * or perform operations on that array element directly!
      */
     var locItems = currentLocation.items;
-    alert(locItems);
     //lets avoid any problems with locations without any items. Though this seems sloppy
     if(locItems === null) {
         return;
@@ -251,7 +250,7 @@ function but_west() {
 }
 
 function currentCoords () {
-    return "(" + row + ", " + col + ")";
+    return "(" + col + ", " + row + ")";
 }
 
 function getLocation() {
