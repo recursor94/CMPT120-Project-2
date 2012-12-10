@@ -88,13 +88,17 @@ function initLocations () {
     _kitchen.items[0] = new Item("tasty cake", "food");
     locats[locats.length] = _kitchen;
 
-    var _presentationRoom = new locat (3, "presentation Room", "You notice mysterious blue prints They seem...Important...very important.");
-    _presentationRoom.items[0] = new Item ("mysterious blue prints", "quest It.");
-    locats[locats.length] = _presentationRoom;
     
-    var _bar = new locat (4, "bar", "Somebody has left his unfinished space drink on the bar");
+    var _bar = new locat (3, "bar", "Somebody has left his unfinished space drink on the bar");
     _bar.items[0] = new Item ("space beer", "diuretic");
     locats[locats.length] = _bar;
+
+    
+    var _presentationRoom = new locat (4, "presentation Room", "You notice mysterious blue prints. They seem...Important...very important.");
+    _presentationRoom.items[0] = new Item ("mysterious blue prints", "quest It.");
+    locats[locats.length] = _presentationRoom;
+
+    
 
     var _closet = new locat (5, "supply closet", "There's a crowbar here");
     _closet.items[0] = new Item ("crowbar", "weapon");
