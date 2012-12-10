@@ -17,8 +17,8 @@
 
  */
 
-var xpos = 0;
-var ypos = 0;
+var row = 0;
+var col = 0;
 var score = 5;
 var locats = []; // empty locations array to be instantiated in init function
 //vars for testing if you can move or not. Used in direction functions.
