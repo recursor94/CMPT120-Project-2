@@ -45,6 +45,12 @@ function corridor() {
         locats[0].hasVisited = true;
     }
     enableAllButtons();
+
+    // this conditional is if the player is leftmost of the board, which means he can't continue west
+
+    if(col <= 0) {
+        disableButton("west");
+    }
     return locats[0]; //useful for toStrings, and for player location!
 }
 
