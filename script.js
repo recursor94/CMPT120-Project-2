@@ -100,60 +100,64 @@ function initLocations () {
     /* function for initializing each location
      * and filling locats global array
      * This seems dirty, any suggestions are welcome
+     *EDIT:now they take a function too, because the navigation matrix was only getting locations, it wasn't executing their function before.
      */
 
-    var _corridor = new locat (0, "corridor", "");
+    var _corridor = new locat (0, "corridor", "", corridor);
     locats[locats.length] = _corridor;
     
-    var _suite = new locat (1, "suite", "It contains a complimentary water bottle!");
+    var _suite = new locat (1, "suite", "It contains a complimentary water bottle!", suite);
     _suite.items[0] = new Item("complimentary water bottle", "drink");
     locats[locats.length] = _suite;
     
-    var _kitchen = new locat (2, "kitchen", "You see a tasty cake!");
+    var _kitchen = new locat (2, "kitchen", "You see a tasty cake!", kitchen);
     _kitchen.items[0] = new Item("tasty cake", "food");
     locats[locats.length] = _kitchen;
 
     
-    var _bar = new locat (3, "bar", "Somebody has left his unfinished space drink on the bar");
+    var _bar = new locat (3, "bar", "Somebody has left his unfinished space drink on the bar", bar);
     _bar.items[0] = new Item ("space beer", "diuretic");
     locats[locats.length] = _bar;
 
     
-    var _presentationRoom = new locat (4, "presentation Room", "You notice mysterious blue prints. They seem...Important...very important.");
+    var _presentationRoom = new locat (4, "presentation Room", "You notice mysterious blue prints. They seem...Important...very important.", presentationRoom);
     _presentationRoom.items[0] = new Item ("mysterious blue prints", "quest It.");
     locats[locats.length] = _presentationRoom;
 
     
 
-    var _closet = new locat (5, "supply closet", "There's a crowbar here");
+    var _closet = new locat (5, "supply closet", "There's a crowbar here", closet);
     _closet.items[0] = new Item ("crowbar", "weapon");
     locats[locats.length] = _closet;
 
-    var _restroom = new locat (6, "restroom", "You see a roll of toilet paper");
+    var _restroom = new locat (6, "restroom", "You see a roll of toilet paper", restroom);
     _restroom.items[0] = new Item ("toilet paper", "cleaner");
     locats[locats.length] = _restroom;
 
-    var _armory = new locat (7, "armory", "Inside of a glass case, you see a laser gun!");
+    var _armory = new locat (7, "armory", "Inside of a glass case, you see a laser gun!", armory);
     _armory.items[0] = new Item ("space laser gun", "weapon");
     locats[locats.length] = _armory;
 
-    var _hospitalRoom = new locat (8, "hospital room", "There is a medkit here");
+    var _hospitalRoom = new locat (8, "hospital room", "There is a medkit here", hospitalRoom);
     _hospitalRoom.items[0] = new Item ("medkit", "healer");
     locats[locats.length] = _hospitalRoom;
 
-    var _freightDeck = new locat (9, "Freight Deck", "There is a steel shard here");
+    var _freightDeck = new locat (9, "Freight Deck", "There is a steel shard here", freightDeck);
     _freightDeck.items[0] = new Item ("steel shard", "scrap");
     locats[locats.length] = _freightDeck;
 
-    var _office = new locat (10, "office", "On top of the desk, there is a laptop");
+    var _office = new locat (10, "office", "On top of the desk, there is a laptop", office);
     _office.items[0] = new Item ("laptop", "computer");
     locats[locats.length] = _office;
+
+    var _boundary = new locat (11, "boundary", "You can not move forward in this direction.", boundary);
+    locats[locats.length] = _boundary;
 
  }
 
 function init() {
     navControl = [ [1, 3, 5, 7, 9],
-      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 11],
       [2, 4, 6, 8, 10]
     ];
     disableButton("south");
@@ -174,13 +178,15 @@ function take () {
      */
     var locItems = getLocation().items;
     //lets avoid any problems with locations without any items. Though this seems sloppy
-    if(locItems.length === 0) {
+    if(!locItems.length > 0) {
         return;
     }
     
     for (var i in locItems) {
         inventory[inventory.length] = locItems[i];
     }
+    locItems = [];
+    alert(locItems);
     getLocation().clearDescription();
     //now update the text area to show updated description
     updateText("You have collected all of the items in this location");
@@ -254,6 +260,8 @@ function currentCoords () {
 
 function getLocation() {
     var index = navControl[row][col];
+    //first call the actual function, otherwise the functionality associated with the location will not work!
+    locats[index].protocol();
     return locats[index];
 }
 

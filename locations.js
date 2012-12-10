@@ -11,8 +11,8 @@
  * perhaps in the future it would be useful to define
  * each location as an object with an item attribute.
 */
-
-var locat = function (_id, _name, _desc) {
+//protocol uses functional paradigm to use function passed to it and call appropriate location function
+var locat = function (_id, _name, _desc, _protocol) {
 
     /* prototype for location object, will be used in a global array,
      * each will have an id that denotes it's navigation equivalent number
@@ -26,6 +26,7 @@ var locat = function (_id, _name, _desc) {
     this.desc = _desc;
     this.hasVisited = false;
     this.items = [];
+    this.protocol = _protocol;
 
     this.toString = function () {
         return this.name + "\n" + this.desc;
@@ -46,17 +47,11 @@ function corridor() {
 }
 
 function boundary() {
-    //basic button disabling for right or left boundary in corridor
-    if(xpos < 0) {
-        disableButton("north");
-        disableButton("south");
-        disableButton("west");
-    }
-    else if(xpos > 4) {
+    //basic button disabling for right boundary in corridor
         disableButton("north");
         disableButton("east");
         disableButton("south");
-    }
+    
     return "boundary, you can not proceed in this direction.";
 }
 
