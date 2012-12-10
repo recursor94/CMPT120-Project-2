@@ -150,14 +150,11 @@ function initLocations () {
     _office.items[0] = new Item ("laptop", "computer");
     locats[locats.length] = _office;
 
-    var _boundary = new locat (11, "boundary", "You can not move forward in this direction.", boundary);
-    locats[locats.length] = _boundary;
-
  }
 
 function init() {
     navControl = [ [1, 3, 5, 7, 9],
-      [0, 0, 0, 0, 0, 11],
+      [0, 0, 0, 0, 0],
       [2, 4, 6, 8, 10]
     ];
     disableButton("south");

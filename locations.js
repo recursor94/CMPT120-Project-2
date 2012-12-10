@@ -51,6 +51,10 @@ function corridor() {
     if(col <= 0) {
         disableButton("west");
     }
+
+    else if(col >= 4) {
+        disableButton("east");
+    }
     return locats[0]; //useful for toStrings, and for player location!
 }
 
