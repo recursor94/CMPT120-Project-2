@@ -42,16 +42,22 @@ var validCommands = "\nValid Directions are: (North, South, East and West)\n"
     + " The input parser is case insensitive.";
 var puzzleCompleted = false;
 var currentLocation = "suite"; // will be changed after every location change
-var navControl = [ [2, 0]
-                   [1, 0]
-                   [2,]
+
+/* each integer represents an index of the locats array. the row and
+ * column of the two dimensional array correspond to where the 
+ * indicated location would exist in relation to the map
+ */
+
+var navControl = [ [1, 3, 5, 7, 9]
+                   [0, 0, 0, 0, 0]
+                   [2, 4, 6, 8, 10]
                    
 ];
 
 function move (direction) {
     if (direction === "north") {
 
-        currentLocation = navControl[n+1]
+        currentLocation = navControl[n+1];
 }
 
 //name same as id, and type serves as description
@@ -191,7 +197,7 @@ function but_north() {
 	updateText ("You can not move in this direction!");
 	return;
     }
-    ypos+=1;
+    col = col + 1;
     currentLocation = getLocation();
     updateText(currentLocation);
 
@@ -202,7 +208,7 @@ function but_south() {
 	updateText("You can not move in this direction!");
 	return;
     }
-    ypos+=-1;
+    col= col - 1;
     currentLocation = getLocation();
     updateText(currentLocation);
 
@@ -214,7 +220,7 @@ function but_east() {
 	updateText ("You can not move in this direction!");
 	return;
     }
-    xpos+=1;
+    row= row + 1;
     currentLocation = getLocation();
     updateText(currentLocation);
 
@@ -225,14 +231,14 @@ function but_west() {
 	updateText("You can not move in this direction!");
 	return;
     }
-    xpos-=1;
+    row  = row - 1;
     currentLocation = getLocation();
     updateText(currentLocation);
 
 }
 
 function currentCoords () {
-    return "(" + xpos + ", " + ypos + ")";
+    return "(" + row + ", " + col + ")";
 }
 
 function getLocation() {
