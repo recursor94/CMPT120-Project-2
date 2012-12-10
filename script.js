@@ -48,11 +48,7 @@ var currentLocation = "suite"; // will be changed after every location change
  * indicated location would exist in relation to the map
  */
 
-var navControl = [ [1, 3, 5, 7, 9]
-                   [0, 0, 0, 0, 0]
-                   [2, 4, 6, 8, 10]
-                   
-];
+var navControl = null;
 
 function move (direction) {
 
@@ -72,6 +68,8 @@ function move (direction) {
         break;
         
     }
+    return getLocation();
+}
 
 //name same as id, and type serves as description
  var Item = function (_name, _type) {
@@ -154,7 +152,10 @@ function initLocations () {
  }
 
 function init() {
-    alert(navControl[0][0]);
+    navControl = [ [1, 3, 5, 7, 9],
+      [0, 0, 0, 0, 0],
+      [2, 4, 6, 8, 10]
+    ];
     disableButton("south");
     disableButton("east");
     disableButton("west");
@@ -210,8 +211,8 @@ function but_north() {
 	updateText ("You can not move in this direction!");
 	return;
     }
-    col = col + 1;
-    currentLocation = getLocation();
+    
+    currentLocation = move("north");
     updateText(currentLocation);
 
 }
@@ -221,8 +222,7 @@ function but_south() {
 	updateText("You can not move in this direction!");
 	return;
     }
-    col= col - 1;
-    currentLocation = getLocation();
+    currentLocation = move("south");
     updateText(currentLocation);
 
 }
@@ -233,8 +233,7 @@ function but_east() {
 	updateText ("You can not move in this direction!");
 	return;
     }
-    row= row + 1;
-    currentLocation = getLocation();
+    currentLocation = move("east");
     updateText(currentLocation);
 
 }
@@ -244,8 +243,7 @@ function but_west() {
 	updateText("You can not move in this direction!");
 	return;
     }
-    row  = row - 1;
-    currentLocation = getLocation();
+    currentLocation = move("west");
     updateText(currentLocation);
 
 }
@@ -255,7 +253,7 @@ function currentCoords () {
 }
 
 function getLocation() {
-    var index = nav[row][col];
+    var index = navControl[row][col];
     return locats[index];
 }
 
